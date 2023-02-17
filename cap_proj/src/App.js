@@ -19,6 +19,7 @@ function App() {
         {/* <Navbar /> */}
           <div className="content">
             <Routes>
+
               <Route path="/ePTO" element={<EmployeePTO />}></Route>
               <Route path="/eRequest" element={<ERequest />}></Route>
               <Route path="/eHistory" element={<EHistory />}></Route>
@@ -30,6 +31,11 @@ function App() {
               <Route path="/mCalendar" element={<ManagerCalendar />}></Route>
               <Route path="/mHistory" element={<ManagerHistory />}></Route>
               <Route path="/mTeam" element={<ManagerTeam />}></Route>
+
+              <Route path="/adminHome" element={<adminHome />}></Route>
+              <Route path="/adminCalendar" element={<adminCalendar />}></Route>
+              <Route path="/adminSetHoliday" element={<adminHoliday />}></Route>
+              <Route path="/adminSearch" element={<adminSearch />}></Route>
             </Routes>
           </div>
           
