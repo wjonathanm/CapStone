@@ -8,21 +8,14 @@ const Navbar = () => {
             <div className="navbar-top">
                 <img style={{width: "150px", height: "65px", padding: "5px"}} src={logo} alt="aldi_logo" />
                 <div className="links">
-                    <Link to="/administratorHome">Home</Link>
-                    <Link to="/adminCalendar">Calendar</Link>
-                    <Link to="/administratorSetHoliday">SetHoliday</Link>
-                    <Link to="/adminCalendar">Calendar</Link>
+                    <Link to="/zHome">Home</Link>
+                    <Link to="/zCalendar">Calendar</Link>
+                    <Link to="/zSetHoliday">SetHoliday</Link>
+                    <Link to="/zCalendar">Calendar</Link>
                 </div>
                 <div className="nav-button">
                     <button className="log-out" >Log Out</button>
                 </div>
-            </div>
-            <div className="navbar-bottom">
-                <ul className="list">
-                    <li className="items">First and Last Name</li>
-                    <li className="items">ID</li>
-                    <li className="items">Anniversary Date</li>
-                </ul>
             </div>
         </nav>
 
