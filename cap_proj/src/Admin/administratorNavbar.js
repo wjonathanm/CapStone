@@ -8,9 +8,9 @@ const Navbar = () => {
             <div className="navbar-top">
                 <img style={{width: "150px", height: "65px", padding: "5px"}} src={logo} alt="aldi_logo" />
                 <div className="links">
-                    <Link to="/adminHome">Home</Link>
+                    <Link to="/administratorHome">Home</Link>
                     <Link to="/adminCalendar">Calendar</Link>
-                    <Link to="/adminSetHoliday">SetHoliday</Link>
+                    <Link to="/administratorSetHoliday">SetHoliday</Link>
                     <Link to="/adminCalendar">Calendar</Link>
                 </div>
                 <div className="nav-button">
