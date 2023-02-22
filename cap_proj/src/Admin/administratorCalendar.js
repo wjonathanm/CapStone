@@ -1,9 +1,13 @@
 import Navbar from "./administratorNavbar";
+import ACalendar from "./aCalendar";
 
 const administratorCalendar = () => {
-    return ( 
-        <Navbar />
-     );
+    return (
+        <>
+            <Navbar/>
+            <ACalendar/>
+        </>
+    );
 }
- 
+
 export default administratorCalendar;

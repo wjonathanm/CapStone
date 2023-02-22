@@ -5,6 +5,8 @@ import AdministratorHome from './Admin/administratorHome';
 import AdministratorCalendar from './Admin/administratorCalendar';
 import AdministratorHoliday from './Admin/administratorSetHoliday';
 import AdministratorSearch from "./Admin/administratorSearch";
+import AdministratorCUser from "./Admin/administratorCUser";
+
 
 import ManagerHome from './Manager/mHome';
 import ManagerCalendar from './Manager/mCalendar';
@@ -39,10 +41,11 @@ function App() {
               <Route path="/mHistory" element={<ManagerHistory />}></Route>
               <Route path="/mTeam" element={<ManagerTeam />}></Route>
 
-              <Route path="/zHome" element={<AdministratorHome />}></Route>
-              <Route path="/zCalendar" element={<AdministratorCalendar />}></Route>
-              <Route path="/zSetHoliday" element={<AdministratorHoliday />}></Route>
-              <Route path="/zSearch" element={<AdministratorSearch />}></Route>
+              <Route path="/administratorHome" element={<AdministratorHome />}></Route>
+              <Route path="/administratorCalendar" element={<AdministratorCalendar />}></Route>
+              <Route path="/administratorSetHoliday" element={<AdministratorHoliday />}></Route>
+              <Route path="/administratorSearch" element={<AdministratorSearch />}></Route>
+              <Route path="/administratorCUser" element={<AdministratorCUser />}></Route>
             </Routes>
           </div>
           

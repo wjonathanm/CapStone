@@ -1,10 +1,13 @@
 import Navbar from "./administratorNavbar";
-
+import ACalendar from "./aCalendar";
 
 const administratorHome = () => {
 
     return ( 
-        <Navbar/>
+        <>
+            <Navbar/>
+            <ACalendar/>
+        </>
 
      );
 }
