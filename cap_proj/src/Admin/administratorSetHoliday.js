@@ -1,12 +1,13 @@
 import Navbar from "./administratorNavbar";
-import HolidayList from "./aHoliday";
+// import HolidayList from "./aHoliday";
 
 const administratorSetHoliday = () => {
-
+    // const holidays=HolidayList;
     return (
         <>
-        <Navbar />
             {/*<HolidayList/>*/}
+        <Navbar />
+
         </>
     );
 }

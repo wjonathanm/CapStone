@@ -5,7 +5,9 @@ const administratorCalendar = () => {
     return (
         <>
             <Navbar/>
-            <ACalendar/>
+            <div className="calendarview">
+                <ACalendar/>
+            </div>
         </>
     );
 }

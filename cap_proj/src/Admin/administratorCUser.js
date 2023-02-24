@@ -4,8 +4,9 @@ import Navbar from "./administratorNavbar";
 const administratorCUser = () => {
 
     return (
+        <>
         <Navbar/>
-
+        </>
     );
 }
 

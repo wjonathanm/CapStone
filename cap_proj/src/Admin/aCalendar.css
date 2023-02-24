@@ -1,8 +1,8 @@
 .calendar {
     font-family: sans-serif;
     display: inline-block;
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 2px solid #ccc;
+    padding: 40px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     user-select: none;
@@ -12,13 +12,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .prev,
 .next {
     cursor: pointer;
-    font-size: 14px;
+    font-size: 20px;
     padding: 5px;
     border-radius: 3px;
     background-color: #f1f1f1;
@@ -31,7 +31,7 @@
 }
 
 .month {
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .weekday {
-    font-size: 14px;
+    font-size: 25px;
     font-weight: bold;
     color: #666;
 }
@@ -50,7 +50,7 @@
 .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+    gap: 10px;
 }
 
 .day {
