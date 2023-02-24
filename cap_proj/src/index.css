@@ -2,7 +2,7 @@
   margin: 0;
   font-family: "Ariel";
   color: #333;
-
+  box-sizing: border-box;
 }
 .navbar{
   /* display: flex; */
@@ -114,4 +114,20 @@
 .holidays{
   display: inline;
   padding: 20px;
+}
+.e-pending-requests{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  /* text-align: center; */
+}
+th, td {
+  text-align: left;
+  padding: 16px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
