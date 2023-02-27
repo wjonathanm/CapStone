@@ -22,7 +22,7 @@
 }
 .log-out {
   position: relative;
-  left: 600px;
+  left: 500px;
   transition-duration: 0.4s;
   padding: 15px 32px;
   text-align: center;
@@ -87,7 +87,7 @@
 }
 .eRequest{
   text-align: center;
-}
+} HEAD
 .grid-epto-container{
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -163,4 +163,34 @@ textarea{
 }
 .request-text{
   padding: 10px;
+}
+/**********************/
+/*ADMIN STYLES*/
+div.adminwelcome{
+  position: absolute;
+  top:25%;
+  left:50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%)
+}
+div.calendarview{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%)
+}
+div.sidebar {
+  background-color: grey;
+  width: 200px;
+  height: 150%;
+  padding: 30px;
+  box-sizing: border-box;
+  border-right: 1px solid black;
+  text-align: center;
+}
+div.sidebar h2 {
+  color: white;
+  font-size: 20px;
+  margin: 50px 0;
 }

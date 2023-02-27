@@ -1,5 +1,13 @@
 // import './App.css';
 // import Navbar from './Employee/eNavbar';
+
+import AdministratorHome from './Admin/administratorHome';
+import AdministratorCalendar from './Admin/administratorCalendar';
+import AdministratorHoliday from './Admin/administratorSetHoliday';
+import AdministratorSearch from "./Admin/administratorSearch";
+import AdministratorCUser from "./Admin/administratorCUser";
+
+
 import ManagerHome from './Manager/mHome';
 import ManagerCalendar from './Manager/mCalendar';
 import ManagerHistory from './Manager/mHistory';
@@ -12,6 +20,7 @@ import ECalendar from './Employee/eCalendar';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import NotFound from './NotFound';
 
+
 function App() {
   return (
     <Router>
@@ -19,6 +28,7 @@ function App() {
         {/* <Navbar /> */}
           <div className="content">
             <Routes>
+
               <Route path="/ePTO" element={<EmployeePTO />}></Route>
               <Route path="/eRequest" element={<ERequest />}></Route>
               <Route path="/eHistory" element={<EHistory />}></Route>
@@ -30,6 +40,12 @@ function App() {
               <Route path="/mCalendar" element={<ManagerCalendar />}></Route>
               <Route path="/mHistory" element={<ManagerHistory />}></Route>
               <Route path="/mTeam" element={<ManagerTeam />}></Route>
+
+              <Route path="/administratorHome" element={<AdministratorHome />}></Route>
+              <Route path="/administratorCalendar" element={<AdministratorCalendar />}></Route>
+              <Route path="/administratorSetHoliday" element={<AdministratorHoliday />}></Route>
+              <Route path="/administratorSearch" element={<AdministratorSearch />}></Route>
+              <Route path="/administratorCUser" element={<AdministratorCUser />}></Route>
             </Routes>
           </div>
           
