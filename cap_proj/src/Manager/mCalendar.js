@@ -8,7 +8,9 @@ function MyApp() {
   return (
     <div>
          <Navbar />
+      <div>
       <Calendar onChange={onChange} value={value} />
+      </div>
     </div>
   );
 }
