@@ -3,12 +3,7 @@ import { useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom";
 function Login() {
     const [username, setUsername] = useState('');
-    // const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    // function handlePass( p ){
-    //     setPassword(p.target.value);
-    //     console.log(password);
-    // }
     function handleUsername( i ){
         setUsername(i.target.value);
         console.log( username )
@@ -59,10 +54,6 @@ function Login() {
             result = false;
             alert('Please Enter Username');
         }
-        // if (password === '' || password === null){
-        //     result = false;
-        //     alert('Please Enter Password');
-        // }
         if (email === '' || email === null){
             result = false;
             alert('Please Enter Email');
@@ -76,9 +67,6 @@ function Login() {
                 <label className="label">
                     Id:<input type="text" onChange={handleUsername} className="input"/>
                 </label>
-                {/*<label className="label">*/}
-                {/*    Password: <input type="text" onChange={handlePass} className="input"/>*/}
-                {/*</label>*/}
                 <label className="label">
                     Email:<input type="text" onChange={handleEmail} className="input"/>
                 </label>
