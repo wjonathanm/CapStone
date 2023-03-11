@@ -1,14 +1,25 @@
 {
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "http-proxy": "^1.18.1",
     "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.21"
   },
   "name": "capstone",
   "description": "This is the repository for the capstone project.\r Just incase you guys don't have a folder called node_modules installed run this to get it\r npx create-react-app cap_proj",
   "version": "1.0.0",
-  "main": "database.js",
+  "main": "server.js",
+  "proxy": "http://localhost:3000/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",

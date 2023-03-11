@@ -3,18 +3,39 @@ import { useNavigate } from "react-router-dom";
 
 function Employee(){
     const navigate = useNavigate();
-    const[displayusername,setDisplayUser] = useState('');
+    const [employee, setEmployee] = useState('');
+    const [displayusername,setDisplayUser] = useState('');
     useEffect( () => {
-        let username = sessionStorage.getItem('username');
-        if (username === '' || username === null){
-            navigate('/login');
-        }else{
-            setDisplayUser(username);
-        }
-    })
+        // frontend test
+        // let username = sessionStorage.getItem('username');
+        // if (username === '' || username === null){
+        //     navigate('/');
+        // }else{
+        //     setDisplayUser(username);
+        //     fetch("http://localhost:8000/user/" + username)
+        //         .then((res) => {
+        //             return res.json();
+        //         }).then((resp) => {
+        //             setEmployees(resp);
+        //         }).catch((err) => {
+        //             console.log(err.message);
+        //         });
+        // }
+        // db test
+        fetch("/employee").then(
+            resp => resp.json()
+        ).then(
+            data => {
+                setEmployee(data)
+            }
+        )
+    }, []);
     return(
         <div>
-            <h1>Hello from employee</h1>
+            <h1 className="text-center">Welcome to Nihira Techiees</h1>
+            <div>{employee.id}</div>
+            <div>{employee.password}</div>
+            <div>{employee.FirstName}</div>
         </div>
     )
 }
