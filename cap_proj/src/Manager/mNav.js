@@ -12,6 +12,7 @@ const Navbar = () => {
                     <Link to="/mTeam">Team</Link>
                     <Link to="/mHistory">History</Link>
                     <Link to="/mCalendar">Calendar</Link>
+                    <Link to="/mRequest">Request</Link>
                 </div>
                 <div className="nav-button">
                     <button className="log-out" >Log Out</button>
