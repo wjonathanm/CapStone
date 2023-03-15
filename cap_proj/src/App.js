@@ -1,8 +1,10 @@
+
 import '../App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Login from "./RouterPages/Login";
 import Signup from "./RouterPages/Signup";
 import Employee from "./RouterPages/Employee";
+
 import AdministratorHome from './Admin/administratorHome';
 import AdministratorCalendar from './Admin/administratorCalendar';
 import AdministratorHoliday from './Admin/administratorSetHoliday';
@@ -21,6 +23,7 @@ import EHistory from './Employee/eHistory';
 import ECalendar from './Employee/eCalendar';
 import NotFound from './NotFound';
 
+
 function App() {
   return(
       <BrowserRouter>
@@ -29,25 +32,25 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/employee' element={<Employee /> } />
 
-          <Route path="/ePTO" element={<EmployeePTO />}></Route>
-          <Route path="/eRequest" element={<ERequest />}></Route>
-          <Route path="/eHistory" element={<EHistory />}></Route>
-          <Route path="/eCalendar" element={<ECalendar />}></Route>
-          <Route path="*" element={ <NotFound /> }></Route>
-          <Route path="/eCalendar" element={<ECalendar />}></Route>
+            <Route path="/ePTO" element={<EmployeePTO />}></Route>
+            <Route path="/eRequest" element={<ERequest />}></Route>
+            <Route path="/eHistory" element={<EHistory />}></Route>
+            <Route path="/eCalendar" element={<ECalendar />}></Route>
+            <Route path="*" element={ <NotFound /> }></Route>
+            <Route path="/eCalendar" element={<ECalendar />}></Route>
 
-          <Route path="/mHome" element={<ManagerHome />}></Route>
-          <Route path="/mCalendar" element={<ManagerCalendar />}></Route>
-          <Route path="/mHistory" element={<ManagerHistory />}></Route>
-          <Route path="/mTeam" element={<ManagerTeam />}></Route>
+            <Route path="/mHome" element={<ManagerHome />}></Route>
+            <Route path="/mCalendar" element={<ManagerCalendar />}></Route>
+            <Route path="/mHistory" element={<ManagerHistory />}></Route>
+            <Route path="/mTeam" element={<ManagerTeam />}></Route>
 
-          <Route path="/administratorHome" element={<AdministratorHome />}></Route>
-          <Route path="/administratorCalendar" element={<AdministratorCalendar />}></Route>
-          <Route path="/administratorSetHoliday" element={<AdministratorHoliday />}></Route>
-          <Route path="/administratorSearch" element={<AdministratorSearch />}></Route>
-          <Route path="/administratorCUser" element={<AdministratorCUser />}></Route>
+            <Route path="/administratorHome" element={<AdministratorHome />}></Route>
+            <Route path="/administratorCalendar" element={<AdministratorCalendar />}></Route>
+            <Route path="/administratorSetHoliday" element={<AdministratorHoliday />}></Route>
+            <Route path="/administratorSearch" element={<AdministratorSearch />}></Route>
+            <Route path="/administratorCUser" element={<AdministratorCUser />}></Route>
         </Routes>
-      </BrowserRouter>
-  )
+    </BrowserRouter>
+  );
 }
 export default App;
