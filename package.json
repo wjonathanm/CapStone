@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/wjonathanm/CapStone/issues"
   },
-  "homepage": "https://github.com/wjonathanm/CapStone#readme"
+  "homepage": "https://github.com/wjonathanm/CapStone#readme",
+  "react-calendar": "^4.0.0"
+
 }
+
