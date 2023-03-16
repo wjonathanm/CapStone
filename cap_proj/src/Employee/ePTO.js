@@ -1,4 +1,5 @@
 import Navbar from "./eNavbar";
+// import '../index.css'
 // import { useState } from "react";
 // import { UserData } from "./eData";
 // import DoughnutChart from "../Components/DoughnutChart";
@@ -64,7 +65,7 @@ const EmployeePTO = () => {
                         <div className="days-off-contents">Vacation</div>
                     </div> */}
                 </div>
-                    
+
                 <div className="emp-header">
                     <h1>Pending Requests</h1>
                     <br></br>
@@ -96,7 +97,7 @@ const EmployeePTO = () => {
                         <div className="holidays">Holdiay Name</div>
                         <div className="holidays">Holdiay Date</div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

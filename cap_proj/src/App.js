@@ -1,8 +1,8 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import AdministratorHome from './Admin/administratorHome';
 
-import Login from "./RouterPages/Login";
-import Signup from "./RouterPages/Signup";
+import Login from "./Login/Login";
+import Signup from "./Login/Signup";
 import Employee from "./RouterPages/Employee";
 import AdministratorCalendar from './Admin/administratorCalendar';
 import AdministratorHoliday from './Admin/administratorSetHoliday';
