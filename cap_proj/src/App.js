@@ -1,6 +1,6 @@
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Login from "./Login/Login";
 import Signup from "./Login/Signup";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Employee from "./RouterPages/Employee";
 
 import AdministratorHome from './Admin/administratorHome';
