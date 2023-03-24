@@ -17,7 +17,13 @@ function Login() {
         ).then(data => {
             for( let i = 0; i < data.length; i++){
                 if(data[i].role === "Employee"){
-                    navigate("/employee");
+                    navigate("/ePTO");
+                }else if(data[i].role === "Manager"){
+                    navigate("/mHome");
+                }else if(data[i].role === "Director"){
+                    navigate("/administratorHome");
+                }else{
+                    alert("Employee not Found.")
                 }
             }
         })

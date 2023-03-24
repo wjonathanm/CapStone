@@ -1,10 +1,23 @@
 import Navbar from "./eNavbar";
 // import '../index.css'
-// import { useState } from "react";
+import {useEffect, useState} from "react";
 // import { UserData } from "./eData";
 // import DoughnutChart from "../Components/DoughnutChart";
 
 const EmployeePTO = () => {
+    // const [backEndData, setbackEndData] = useState('');
+    // useEffect(() => {
+    //     fetch("/login" )
+    //         .then((res) =>{
+    //             return res.json();
+    //         }).then((resp) =>{
+    //         setbackEndData(resp);
+    //         // console.log(backEndData)
+    //     }).catch((err) => {
+    //         console.log(err.message);
+    //     })
+    // },[])
+    // console.log(backEndData);
     // const [ userData, setUserData ] = useState({
     //     labels: UserData.map((data) => data.year),
     //     datasets: [
@@ -21,7 +34,6 @@ const EmployeePTO = () => {
     //       },
     //     ],
     //   });
-
     return ( 
         <div>
             <Navbar />

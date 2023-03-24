@@ -4,9 +4,8 @@
 /*}*/
 .login {
     max-width: 450px;
-    max-height: 1000px;
     margin: 115px auto;
-    padding: 25px;
+    padding: 46px;
     background-image: url("../imgs/ASG_SER_MC_RGB.png");
     background-size: 450px;
 }
@@ -44,27 +43,27 @@
     border-radius: 8px;
     cursor: pointer;
 }
-.a{
-    padding: 0;
-    margin-left: 20px;
-    margin-bottom: 80px;
-    border-radius: 8px;
-}
-a:link {
-    color: #FFB428;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:hover {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-}
-a:visited {
-    color: purple;
-    background-color: transparent;
-    text-decoration: none;
-}
+/*.a{*/
+/*    padding: 0;*/
+/*    margin-left: 20px;*/
+/*    margin-bottom: 80px;*/
+/*    border-radius: 8px;*/
+/*}*/
+/*a:link {*/
+/*    color: #FFB428;*/
+/*    background-color: transparent;*/
+/*    text-decoration: none;*/
+/*}*/
+/*a:hover {*/
+/*    color: white;*/
+/*    background-color: transparent;*/
+/*    text-decoration: underline;*/
+/*}*/
+/*a:visited {*/
+/*    color: purple;*/
+/*    background-color: transparent;*/
+/*    text-decoration: none;*/
+/*}*/
 
 .label2 {
     font-size: 15px;
