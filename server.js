@@ -18,6 +18,15 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.listen(5000, () => {
     console.log("listening on http://localhost:5000")
 })
+app.get('/ePTO', (req, res) => {
+    client.query('Select * From employee Where id = 774678', (err, resp) => {
+        if(!err){
+            console.log(resp.rows)
+            res.send(resp.rows)
+        }
+    });
+    client.end;
+})
 app.post('/login', (req,res) => {
     let employeeid = req.body.userid;
     if(employeeid) {

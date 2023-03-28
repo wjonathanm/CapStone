@@ -5,6 +5,39 @@ import {useEffect, useState} from "react";
 // import DoughnutChart from "../Components/DoughnutChart";
 
 const EmployeePTO = () => {
+    const [eid, setEid] = useState("")
+    const [fname, setFname] = useState("")
+    const [lname, setLname] = useState("")
+    const [email, setEmail] = useState("")
+    const [hiredate, setHireDate] = useState("")
+    const [lid, setLid] = useState("")
+    const [role, setRole] = useState("")
+    const [sick, setSick] = useState("")
+    const [personal, setPersonal] = useState("")
+    const [vacation, setVacation] = useState("")
+    useEffect(() => {
+        fetch("/ePTO").then(
+            response => response.json()
+        ).then(
+            data => {
+                JSON.stringify(data)
+                console.log(data)
+                for (let i = 0; i < data.length; i++) {
+                    setEid(data[i].id);
+                    setEmail(data[i].email);
+                    setFname(data[i].firstname);
+                    setLname(data[i].lastname);
+                    setLid(data[i].leaderid);
+                    setRole(data[i].role);
+                    setSick(data[i].ptobalancesick);
+                    setPersonal(data[i].ptobalancepersonal);
+                    setVacation(data[i].ptobalancevacation);
+                    setHireDate(data[i].hiredate);
+
+                }
+            }
+        )
+    }, [])
     // const [backEndData, setbackEndData] = useState('');
     // useEffect(() => {
     //     fetch("/login" )
@@ -67,7 +100,7 @@ const EmployeePTO = () => {
                         <div className="days-off-contents">Type</div>
                     </div>
                     <div className="days-off">
-                        <div className="days-off-contents">2/24/2023</div>
+                        <div className="days-off-contents">2/24/2023 : {hiredate}</div>
                         <div className="days-off-contents">2/25/2023</div>
                         <div className="days-off-contents">Sick</div>
                     </div>
