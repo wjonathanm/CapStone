@@ -41,6 +41,7 @@ function App() {
             <Route path="/mCalendar" element={<ManagerCalendar />}></Route>
             <Route path="/mHistory" element={<ManagerHistory />}></Route>
             <Route path="/mTeam" element={<ManagerTeam />}></Route>
+
             <Route path="/administratorHome" element={<AdministratorHome />}></Route>
             <Route path="/administratorCalendar" element={<AdministratorCalendar />}></Route>
             <Route path="/administratorSetHoliday" element={<AdministratorHoliday />}></Route>

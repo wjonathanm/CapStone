@@ -100,7 +100,7 @@ const EmployeePTO = () => {
                         <div className="days-off-contents">Type</div>
                     </div>
                     <div className="days-off">
-                        <div className="days-off-contents">2/24/2023 : {hiredate}</div>
+                        <div className="days-off-contents">2/24/2023</div>
                         <div className="days-off-contents">2/25/2023</div>
                         <div className="days-off-contents">Sick</div>
                     </div>

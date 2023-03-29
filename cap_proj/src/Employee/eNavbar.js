@@ -2,21 +2,39 @@ import { Link } from "react-router-dom";
 import logo from '../imgs/aldi_logo1.png';
 import {useEffect, useState} from "react";
 const Navbar = () => {
-    const [backendData, setbackEndData] = useState("");
+    const [Eid, setEid] = useState("")
+    const [Fname, setFname] = useState("")
+    const [Lname, setLname] = useState("")
+    const [Email, setEmail] = useState("")
+    const [Hiredate, setHireDate] = useState("")
+    const [Lid, setLid] = useState("")
+    const [Role, setRole] = useState("")
+    const [Sick, setSick] = useState("")
+    const [Personal, setPersonal] = useState("")
+    const [Vacation, setVacation] = useState("")
     useEffect(() => {
-        fetch("/ePTO")
-            .then((response) => response.json())
-            .then((data) => console.log(data));
-        // fetch("/ePTO" )
-        //     .then((res) =>{
-        //         return res.json();
-        //     }).then((resp) =>{
-        //     setbackEndData(resp);
-        //     console.log(backendData)
-        // }).catch((err) => {
-        //     console.log(err.message);
-        // })
-    },[])
+        fetch("/ePTO").then(
+            response => response.json()
+        ).then(
+            data => {
+                JSON.stringify(data)
+                console.log(data)
+                for (let i = 0; i < data.length; i++) {
+                    setEid(data[i].id);
+                    setEmail(data[i].email);
+                    setFname(data[i].firstname);
+                    setLname(data[i].lastname);
+                    setLid(data[i].leaderid);
+                    setRole(data[i].role);
+                    setSick(data[i].ptobalancesick);
+                    setPersonal(data[i].ptobalancepersonal);
+                    setVacation(data[i].ptobalancevacation);
+                    setHireDate(data[i].hiredate);
+
+                }
+            }
+        )
+    }, [])
     return ( 
         <nav className="navbar">
             <div className="navbar-top">
@@ -33,8 +51,8 @@ const Navbar = () => {
             </div>
             <div className="navbar-bottom">
                 <ul className="list">
-                    <li className="items">First and Last Name</li>
-                    <li className="items">ID: {backendData.id}</li>
+                    <li className="items">First and Last Name: {Fname} {Lname}</li>
+                    <li className="items">ID: {Eid}</li>
                     <li className="items">Anniversary Date</li>
                 </ul>
             </div>

@@ -19,13 +19,17 @@ app.listen(5000, () => {
     console.log("listening on http://localhost:5000")
 })
 app.get('/ePTO', (req, res) => {
-    client.query('Select * From employee Where id = 774678', (err, resp) => {
-        if(!err){
-            console.log(resp.rows)
-            res.send(resp.rows)
-        }
-    });
-    client.end;
+    let eid = req.session.employeeid
+    if (eid){
+        let getQuery = `Select * From employee WHERE id = ${eid}`
+        client.query(getQuery, (err, resp) => {
+            if(!err){
+                console.log(resp.rows)
+                res.send(resp.rows)
+            }
+        });
+        client.end;
+    }
 })
 app.post('/login', (req,res) => {
     let employeeid = req.body.userid;
@@ -33,13 +37,11 @@ app.post('/login', (req,res) => {
         let postQuery = `Select * FROM employee WHERE id = ${employeeid}`
         client.query(postQuery, (err, result) => {
             let person = result.rows;
-            // console.log(person)
             if(person.length > 0){
                 for( let i = 0; i < person.length; i++) {
                     if(person[i].id == employeeid){
                         req.session.loggedin = true;
                         req.session.employeeid = employeeid;
-                        // console.log(req.session.employeeid)
                         res.send(person);
                     }else{
                         res.send("That didn't work");
