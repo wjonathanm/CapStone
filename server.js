@@ -54,6 +54,19 @@ app.post('/login', (req,res) => {
         res.end();
     }
 });
+app.get('/administratorHome', (req, res) => {
+    let eid = req.session.employeeid
+    if (eid){
+        let getQuery = `Select * From employee WHERE id = ${eid}`
+        client.query(getQuery, (err, resp) => {
+            if(!err){
+                console.log(resp.rows)
+                res.send(resp.rows)
+            }
+        });
+        client.end;
+    }
+})
 
 // app.get('/ePTO', (req ,res) => {
 //     let employeeid = req.session.employeeid;
