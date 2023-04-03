@@ -5,7 +5,7 @@ import Employee from "./RouterPages/Employee";
 
 import AdministratorHome from './Admin/AdministratorHome';
 import AdministratorCalendar from './Admin/administratorCalendar';
-import AdministratorHoliday from './Admin/administratorSetHoliday';
+import AdministratorSetHoliday from './Admin/AdministratorSetHoliday';
 import AdministratorSearch from "./Admin/administratorSearch";
 import AdministratorCUser from "./Admin/administratorCUser";
 
@@ -44,7 +44,7 @@ function App() {
 
             <Route path="/administratorHome" element={<AdministratorHome />}></Route>
             <Route path="/administratorCalendar" element={<AdministratorCalendar />}></Route>
-            <Route path="/administratorSetHoliday" element={<AdministratorHoliday />}></Route>
+            <Route path="/administratorSetHoliday" element={<AdministratorSetHoliday />}></Route>
             <Route path="/administratorSearch" element={<AdministratorSearch />}></Route>
             <Route path="/administratorCUser" element={<AdministratorCUser />}></Route>
         </Routes>

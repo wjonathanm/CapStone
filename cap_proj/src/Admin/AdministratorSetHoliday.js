@@ -1,12 +1,11 @@
 import Navbar from "./administratorNavbar";
-// import HolidayList from "./aHoliday";
 import 'react-calendar/dist/Calendar.css'
 import {useEffect, useState} from "react";
 
-const administratorSetHoliday = () => {
-    const [Hid, setHid] = useState("")
-    const [Hname, setHName] = useState("")
-    const [Hdate, setHDate] = useState("")
+const AdministratorSetHoliday = () => {
+    const [holiday_id, setholiday_id] = useState("")
+    const [hname, sethname] = useState("")
+    const [hdate, sethdate] = useState("")
     useEffect(() => {
         fetch("/administratorSetHoliday").then(
             response => response.json()
@@ -15,9 +14,9 @@ const administratorSetHoliday = () => {
                 JSON.stringify(data)
                 console.log(data)
                 for (let i = 0; i < data.length; i++) {
-                    setHid(data[i].Hid);
-                    setHName(data[i].HName);
-                    setHDate(data[i].HDate);
+                    setholiday_id(data[i].holiday_id);
+                    sethname(data[i].hname);
+                    sethdate(data[i].hdate);
 
                 }
             }
@@ -37,7 +36,7 @@ const administratorSetHoliday = () => {
                             <div className="hset-calendar">
                                 <label for="DateSelect">Select date:</label>
 
-                                <input type="date" id="DateSelect" name="HolidayDate"
+                                <input type="date" id="DateSelect" name="hdate"
                                        value="2018-07-22"
                                        min="2018-01-01" max="2018-12-31">
                                 </input>
@@ -45,7 +44,7 @@ const administratorSetHoliday = () => {
                             <br />
                             <label for="HolidayName">Type Holiday Name </label>
                             <div className="request-text">
-                                <textarea name="HName" id="HolidayName" cols="1" rows="1"></textarea>
+                                <textarea name="hname" id="holiday_id" cols="1" rows="1"></textarea>
                             </div>
                             <br />
                             <input type="submit" value="Submit" className="request-button" />
@@ -56,9 +55,9 @@ const administratorSetHoliday = () => {
                         <span>Here are all your holidays</span>
                         <table className="holidays-table">
                             <tr>
-                                <th> {id} </th>
-                                <th> {Hname} </th>
-                                <th> {Date}</th>
+                                <th> {holiday_id} </th>
+                                <th> {hname} </th>
+                                <th> {hdate}</th>
                             </tr>
                         </table>
                     </div>
@@ -68,4 +67,4 @@ const administratorSetHoliday = () => {
         );
     }
 
-export default administratorSetHoliday;
+export default AdministratorSetHoliday;
