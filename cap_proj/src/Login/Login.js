@@ -29,22 +29,20 @@ function Login() {
         })
     }
     return (
-        <div>
-            <div className="login-background">
-                <div className="login">
-                    <h2 className="h2"> Welcome to Aldi </h2>
-                    <form onSubmit={handleSubmit}>
-                        <label className="label">
-                            Id:<input type="text" className="input" required value={userid} onChange={(e) => setUserid(e.target.value)}/>
-                        </label>
-                        <label className="label">
-                            Email:<input type="text" className="input" required value={email} onChange={(e) => setEmail(e.target.value)} />
-                        </label>
-                        <br />
-                        <button type="submit" className="button" value="login"> submit </button>
-                        <a href="/signup"> signup </a>
-                    </form>
-                </div>
+        <div className="beginning">
+            <div className="login">
+                <h2 className="h2"> Welcome to Aldi </h2>
+                <form onSubmit={handleSubmit}>
+                    <label className="label">
+                        Id:<input type="text" className="input" required value={userid} onChange={(e) => setUserid(e.target.value)}/>
+                    </label>
+                    <label className="label">
+                        Email:<input type="text" className="input" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </label>
+                    <br />
+                    <button type="submit" className="button" value="login"> submit </button>
+                    <a href="/signup"> signup </a>
+                </form>
             </div>
         </div>
     );

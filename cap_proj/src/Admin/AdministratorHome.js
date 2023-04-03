@@ -1,18 +1,17 @@
 import Navbar from "./administratorNavbar";
 import ACalendar from "./aCalendar";
-import {useEffect, useState} from "react";
-
-const administratorHome = () => {
-    const [eid, setEid] = useState("")
-    const [fname, setFname] = useState("")
-    const [lname, setLname] = useState("")
-    const [email, setEmail] = useState("")
-    const [hiredate, setHireDate] = useState("")
-    const [lid, setLid] = useState("")
-    const [role, setRole] = useState("")
-    const [sick, setSick] = useState("")
-    const [personal, setPersonal] = useState("")
-    const [vacation, setVacation] = useState("")
+import { useState, useEffect} from "react";
+function AdministratorHome(){
+    const [Eid, setEid] = useState("")
+    const [Fname, setFname] = useState("")
+    const [Lname, setLname] = useState("")
+    const [Email, setEmail] = useState("")
+    const [Hiredate, setHireDate] = useState("")
+    const [Lid, setLid] = useState("")
+    const [Role, setRole] = useState("")
+    const [Sick, setSick] = useState("")
+    const [Personal, setPersonal] = useState("")
+    const [Vacation, setVacation] = useState("")
     useEffect(() => {
         fetch("/ePTO").then(
             response => response.json()
@@ -36,11 +35,11 @@ const administratorHome = () => {
             }
         )
     }, [])
-    return ( 
-        <>
+    return(
+        <div>
             <Navbar/>
             <div className="sidebar">
-                <h2>{fname}</h2>
+                <h2>{Fname}</h2>
                 <h2>Modify User</h2>
                 <h2>Delete Employee</h2>
                 <h2>Set Holidays</h2>
@@ -50,11 +49,9 @@ const administratorHome = () => {
                 <h2>Welcome Admin!</h2>
             </div>
             <div className="calendarview">
-            <ACalendar/>
+                <ACalendar/>
             </div>
-        </>
-
-     );
+        </div>
+    )
 }
- 
-export default administratorHome;
+export default AdministratorHome;

@@ -3,7 +3,7 @@ import Login from "./Login/Login";
 import Signup from "./Login/Signup";
 import Employee from "./RouterPages/Employee";
 
-import AdministratorHome from './Admin/administratorHome';
+import AdministratorHome from './Admin/AdministratorHome';
 import AdministratorCalendar from './Admin/administratorCalendar';
 import AdministratorHoliday from './Admin/administratorSetHoliday';
 import AdministratorSearch from "./Admin/administratorSearch";

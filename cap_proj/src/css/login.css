@@ -1,7 +1,8 @@
-/*body {*/
-/*    background-image: url("../imgs/healthy-aldi-finds-coming-to-store-copy.jpg");*/
-/*    background-size: 1540px;*/
-/*}*/
+.beginning{
+    background-image: url("../imgs/healthy-aldi-finds-coming-to-store-copy.jpg");
+    background-size: 1540px;
+    padding: 17px;
+}
 .login {
     max-width: 450px;
     margin: 115px auto;
