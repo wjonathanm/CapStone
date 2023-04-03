@@ -1,14 +1,20 @@
 import Navbar from "./eNavbar";
-// import { useState } from "react";
+import { useState } from "react";
 import 'react-calendar/dist/Calendar.css'
+import login from "../Login/Login";
 // import Calendar from 'react-calendar'
 
 const Request = () => {
     
     // const [date, setDate] = useState(new Date())
-
-
-
+    const [ ptype, setPtype ] = useState("")
+    const [ sDate, setSdate ] = useState("")
+    const [ eDate, setEdate ] = useState("")
+    const [ comment, setComment ] = useState("")
+    console.log(ptype)
+    console.log(sDate)
+    console.log(eDate)
+    console.log(comment)
     return ( 
         <div className="eRequest">
             <Navbar />
@@ -28,7 +34,10 @@ const Request = () => {
                         <br />
                         <span>PTO Type:</span>
                         <span className="custom-select">
-                            <select>
+                            <select onChange={(e) => setPtype(e.target.value)}>
+                                {/*<option value="Vacation">Vacation</option>*/}
+                                {/*<option value="Sick">Sick</option>*/}
+                                {/*<option value="Personal">Personal</option>*/}
                                 <option value="Vacation">Vacation</option>
                                 <option value="Sick">Sick</option>
                                 <option value="Personal">Personal</option>
@@ -56,18 +65,18 @@ const Request = () => {
 
                             <input type="date" id="start" name="trip-start"
                                 value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31">
+                                min="2018-01-01" max="2018-12-31" onChange={(e)=> setSdate(e.target.value)}>
                             </input>
                             <label for="start">End date:</label>
                             <input type="date" id="start" name="trip-start"
                                 value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31">
+                                min="2018-01-01" max="2018-12-31" onChange={(e)=> setEdate(e.target.value)}>
                             </input>
                         </div>
                         <br />
                         <label for="emp-reason">Reason: </label>
                         <div className="request-text">
-                            <textarea name="Reason" id="emp-reason" cols="30" rows="4"></textarea>
+                            <textarea name="Reason" id="emp-reason" cols="30" rows="4" onChange={(e) => setComment(e.target.value)}></textarea>
                         </div>
                         <br />
                         <input type="submit" value="Submit" className="request-button" />
