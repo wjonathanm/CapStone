@@ -33,7 +33,7 @@ const AdministratorHome = () => {
             </div>
             <div className= "adminwelcome">
                 <h2>Welcome Admin! {fname} {lname}</h2>
-                <h2>{eid}</h2>
+                <h2>Id #{eid}</h2>
             </div>
             <div className="calendarview">
                 <ACalendar/>

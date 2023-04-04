@@ -7,7 +7,7 @@ import AdministratorHome from './Admin/AdministratorHome';
 import AdministratorCalendar from './Admin/administratorCalendar';
 import AdministratorSetHoliday from './Admin/AdministratorSetHoliday';
 import AdministratorSearch from "./Admin/administratorSearch";
-import AdministratorCUser from "./Admin/administratorCUser";
+import AdministratorCUser from "./Admin/AdministratorCUser";
 
 
 import ManagerHome from './Manager/mHome';

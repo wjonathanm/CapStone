@@ -39,12 +39,14 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    background-color: #666666;
 }
 
 .weekday {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    color: #666;
+    color: white;
+    margin: 5px;
 }
 
 .days {
