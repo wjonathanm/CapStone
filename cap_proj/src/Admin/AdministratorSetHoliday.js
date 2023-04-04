@@ -3,9 +3,9 @@ import 'react-calendar/dist/Calendar.css'
 import {useEffect, useState} from "react";
 
 const AdministratorSetHoliday = () => {
-    const [holiday_id, setholiday_id] = useState("")
-    const [hname, sethname] = useState("")
-    const [hdate, sethdate] = useState("")
+    const [holiday_id, setHoliday_id] = useState("")
+    const [hname, setHname] = useState("")
+    const [hdate, setHdate] = useState("")
     useEffect(() => {
         fetch("/administratorSetHoliday").then(
             response => response.json()
@@ -14,9 +14,9 @@ const AdministratorSetHoliday = () => {
                 JSON.stringify(data)
                 console.log(data)
                 for (let i = 0; i < data.length; i++) {
-                    setholiday_id(data[i].holiday_id);
-                    sethname(data[i].hname);
-                    sethdate(data[i].hdate);
+                    setHoliday_id(data[i].holiday_id);
+                    setHname(data[i].hname);
+                    setHdate(data[i].hdate);
 
                 }
             }

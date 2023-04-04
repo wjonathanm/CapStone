@@ -55,11 +55,10 @@ app.post('/login', (req,res) => {
     }
 });
 app.get('/administratorHome', (req, res) => {
-    //*** This is hardcoded id
     let eid=555149
     if(eid) {
-        // let eid = req.session.employeeid
-        // if (eid){
+        let eid = req.session.employeeid
+        if (eid){
         let getQuery = `Select * From employee WHERE id = ${eid}`
         client.query(getQuery, (err, resp) => {
             if (!err) {
@@ -69,14 +68,10 @@ app.get('/administratorHome', (req, res) => {
         });
         client.end;
     }
-    // }
+    }
 })
 app.get('/administratorSetHoliday', (req, res) => {
-    let eid=555149
-    if(eid) {
-        // let eid = req.session.employeeid
-        // if (eid){
-        let getQuery = `Select * From holiday`
+    let getQuery = `Select * From holiday`
         client.query(getQuery, (err, resp) => {
             if (!err) {
                 //Do i need to set variables for each holidays here??
@@ -85,8 +80,7 @@ app.get('/administratorSetHoliday', (req, res) => {
             }
         });
         client.end;
-        // }
-    }
+
 })
 // app.get('/ePTO', (req ,res) => {
 //     let employeeid = req.session.employeeid;
