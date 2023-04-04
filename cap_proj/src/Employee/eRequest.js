@@ -1,7 +1,6 @@
 import Navbar from "./eNavbar";
 import { useState } from "react";
 import 'react-calendar/dist/Calendar.css'
-import login from "../Login/Login";
 // import Calendar from 'react-calendar'
 
 const Request = () => {
@@ -15,6 +14,16 @@ const Request = () => {
     console.log(sDate)
     console.log(eDate)
     console.log(comment)
+    const handleRequest = (e) => {
+        e.preventDefault();
+        const request = { ptype, sDate, eDate, comment};
+
+        fetch('/eRequest', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(request)
+        }).then(resp => resp.json())
+    }
     return ( 
         <div className="eRequest">
             <Navbar />
@@ -25,7 +34,7 @@ const Request = () => {
             <div className="request-grid">
                 <div className="request-form">
                     <h1>Request Form</h1>
-                    <form>
+                    <form onSubmit={handleRequest}>
                         {/* <label>
                             Name:
                             <input type="text" name="name" />

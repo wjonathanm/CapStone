@@ -31,6 +31,17 @@ app.get('/ePTO', (req, res) => {
         client.end;
     }
 })
+app.post('/eRequest', (req, res) =>{
+    let ptype = req.body.ptype;
+    let sDate = req.body.sDate;
+    let eDate = req.body.eDate;
+    let comment = req.body.comment;
+    console.log(ptype);
+    console.log(sDate);
+    console.log(eDate);
+    console.log(comment);
+
+})
 app.post('/login', (req,res) => {
     let employeeid = req.body.userid;
     if(employeeid) {
