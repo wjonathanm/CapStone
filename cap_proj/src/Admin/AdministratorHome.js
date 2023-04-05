@@ -14,9 +14,9 @@ const AdministratorHome = () => {
                 JSON.stringify(data)
                 console.log(data)
                 for (let i = 0; i < data.length; i++) {
-                    setId(data[i].id);
-                    setfirstName(data[i].firstname);
-                    setlastName(data[i].lastname);
+                    setEid(data[i].id);
+                    setFname(data[i].firstname);
+                    setLname(data[i].lastname);
 
                 }
             }
