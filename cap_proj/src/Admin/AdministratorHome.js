@@ -7,7 +7,7 @@ const AdministratorHome = () => {
     const [firstname, setfirstName] = useState("")
     const [lastname, setlastName] = useState("")
     useEffect(() => {
-        fetch("/administratorHome").then(
+        fetch("/ePTO").then(
             response => response.json()
         ).then(
             data => {
@@ -15,8 +15,8 @@ const AdministratorHome = () => {
                 console.log(data)
                 for (let i = 0; i < data.length; i++) {
                     setId(data[i].id);
-                    setfirstName(data[i].FirstName);
-                    setlastName(data[i].LastName);
+                    setfirstName(data[i].firstname);
+                    setlastName(data[i].lastname);
 
                 }
             }
@@ -33,7 +33,7 @@ const AdministratorHome = () => {
                 <h2>See All Request</h2>
             </div>
             <div className= "adminwelcome">
-                <h2>Welcome Admin! {id},{firstname},{lastname}</h2>
+                <h2>Welcome Admin! {firstname} {lastname}</h2>
             </div>
             <div className="calendarview">
                 <ACalendar/>

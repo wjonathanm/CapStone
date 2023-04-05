@@ -24,7 +24,7 @@ app.get('/ePTO', (req, res) => {
         let getQuery = `Select * From employee WHERE id = ${eid}`
         client.query(getQuery, (err, resp) => {
             if(!err){
-                console.log(resp.rows)
+                // console.log(resp.rows)
                 res.send(resp.rows)
             }
         });
@@ -35,17 +35,31 @@ app.post('/eRequest', (req, res) =>{
     let ptype = req.body.ptype;
     let sDate = req.body.sDate;
     let eDate = req.body.eDate;
-    let comment = req.body.comment;
+    let reason = req.body.comment;
+    let eid = req.session.employeeid;
+    let lid = req.session.leaderid;
     console.log(ptype);
     console.log(sDate);
     console.log(eDate);
-    console.log(comment);
+    console.log(reason);
+    console.log(eid)
+    console.log(lid)
+    if(eid){
+        let insertQuery = `INSERT INTO requests(employee_id,leader_id,ptype,reasons,start_date,end_date)VALUES('${eid}','${lid}','${ptype}','${reason}','${sDate}','${eDate}')`
+        client.query( insertQuery, (err, result) => {
+            if(!err){
+                console.log("Success")
+            }else{
+                console.log(err)
+            }
+        })
+    }
 
 })
 app.post('/login', (req,res) => {
     let employeeid = req.body.userid;
     if(employeeid) {
-        let postQuery = `Select * FROM employee WHERE id = ${employeeid}`
+        let postQuery = `Select * FROM employee WHERE id = '${employeeid}'`
         client.query(postQuery, (err, result) => {
             let person = result.rows;
             if(person.length > 0){
@@ -53,6 +67,7 @@ app.post('/login', (req,res) => {
                     if(person[i].id == employeeid){
                         req.session.loggedin = true;
                         req.session.employeeid = employeeid;
+                        req.session.leaderid = person[i].leaderid;
                         res.send(person);
                     }else{
                         res.send("That didn't work");
