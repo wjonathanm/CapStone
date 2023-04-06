@@ -1,29 +1,17 @@
 import Navbar from "./administratorNavbar";
 import 'react-calendar/dist/Calendar.css'
 import {useEffect, useState} from "react";
-
+import Holidays from "./aHolidays";
 const AdministratorSetHoliday = () => {
-    const [holiday_id, setHoliday_id] = useState("")
-    const [hname, setHname] = useState("")
-    const [hdate, setHdate] = useState("")
+    const [holidays, setHolidays] = useState([]);
+
     useEffect(() => {
-        fetch("/administratorSetHoliday").then(
-            response => response.json()
-        ).then(
-            data => {
-                console.log(data)
-                for (let i = 0; i < data.length; i++) {
-                    const holiday=data[i]
-                    setHoliday_id(holiday.holiday_id);
-                    setHname(holiday.hname);
-                    setHdate(holiday.hdate);
+        fetch("/administratorSetHoliday")
+            .then(response => response.json())
+            .then(data => setHolidays(data));
+    }, []);
 
-                }
-            }
-        )
-    }, [])
-
-        return (
+    return (
             <div className="HolidaySet">
                 <Navbar />
                 <br />
@@ -51,19 +39,10 @@ const AdministratorSetHoliday = () => {
 
                         </form>
                     </div>
-                    <div className="Holidays">
-                        <span>Here are all your holidays</span>
-                        <table className="holidays-table">
-                            <tr>
-                                <th> {holiday_id} </th>
-                                <th> {hname} </th>
-                                <th> {hdate}</th>
-                            </tr>
-                        </table>
-                    </div>
+                <Holidays holidays={holidays} />
+                </div>
                 </div>
 
-            </div>
         );
     }
 
