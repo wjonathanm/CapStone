@@ -2,6 +2,8 @@ import Navbar from "./administratorNavbar";
 import 'react-calendar/dist/Calendar.css'
 import {useEffect, useState} from "react";
 import Holidays from "./aHolidays";
+
+
 const AdministratorSetHoliday = () => {
     const [holidays, setHolidays] = useState([]);
 
