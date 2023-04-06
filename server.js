@@ -98,6 +98,11 @@ app.get('/administratorHome', (req, res) => {
 })
 app.get('/administratorSetHoliday', (req, res) => {
     let getQuery = `Select * From holiday`
+    let holiday= ["Id"]
+    holiday.forEach(text=>{
+        id=
+
+    })
         client.query(getQuery, (err, resp) => {
             if (!err) {
                 //Do i need to set variables for each holidays here??
