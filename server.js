@@ -97,22 +97,24 @@ app.get('/administratorHome', (req, res) => {
     }
 })
 app.get('/administratorSetHoliday', (req, res) => {
-    let getQuery = `Select * From holiday`
-    let holiday= ["Id"]
-    holiday.forEach(text=>{
-        id=
-
-    })
-        client.query(getQuery, (err, resp) => {
-            if (!err) {
-                //Do i need to set variables for each holidays here??
-                console.log(resp.rows)
-                res.send(resp.rows)
-            }
-        });
-        client.end;
-
-})
+    let getQuery = `SELECT * FROM holiday`;
+    client.query(getQuery, (err, resp) => {
+        if (!err) {
+            const holidays = resp.rows.map(row => {
+                return {
+                    holiday_id: row.holiday_id,
+                    hname: row.hname,
+                    hdate: row.hdate
+                };
+            });
+            console.log(holidays);
+            res.json(holidays);
+        } else {
+            console.error(err);
+            res.status(500).send('Error retrieving holidays');
+        }
+    });
+});
 // app.get('/ePTO', (req ,res) => {
 //     let employeeid = req.session.employeeid;
 //     if(employeeid){

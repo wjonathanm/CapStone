@@ -11,12 +11,12 @@ const AdministratorSetHoliday = () => {
             response => response.json()
         ).then(
             data => {
-                JSON.stringify(data)
                 console.log(data)
                 for (let i = 0; i < data.length; i++) {
-                    setHoliday_id(data[i].holiday_id);
-                    setHname(data[i].hname);
-                    setHdate(data[i].hdate);
+                    const holiday=data[i]
+                    setHoliday_id(holiday.holiday_id);
+                    setHname(holiday.hname);
+                    setHdate(holiday.hdate);
 
                 }
             }
