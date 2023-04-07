@@ -42,7 +42,7 @@ const Navbar = () => {
                 <img style={{width: "150px", height: "65px", padding: "5px"}} src={logo} alt="aldi_logo" />
                 <div className="links">
                     <Link to="/mHome">Home</Link>
-                    <Link to="/mTeam">Team</Link>
+                    <Link to="/mteam">Team</Link>
                     <Link to="/mHistory">History</Link>
                     <Link to="/mCalendar">Calendar</Link>
                     <Link to="/mRequest">Request</Link>

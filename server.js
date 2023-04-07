@@ -31,6 +31,17 @@ app.get('/ePTO', (req, res) => {
         client.end;
     }
 })
+app.get('/mTeam', (req, res) => {
+    let lid = req.session.leaderid;
+    let getQuery = `Select * From employee Where leaderid = ${lid}`
+    client.query(getQuery , (err, resp) => {
+        if(!err){
+            res.send(resp.rows)
+        }else{
+            console.log(err)
+        }
+    })
+})
 app.post('/eRequest', (req, res) =>{
     let ptype = req.body.ptype;
     let sDate = req.body.sDate;
