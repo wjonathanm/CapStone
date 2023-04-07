@@ -42,7 +42,7 @@ const Navbar = () => {
                 <div className="links">
                     <Link to="/ePTO">Home</Link>
                     <Link to="/eRequest">Request</Link>
-                    <Link to="/eHistory">History</Link>
+                    <Link to="/ehistory">History</Link>
                     {/* <Link to="/eCalendar">Calendar</Link> */}
                 </div>
                 <div className="nav-button">
