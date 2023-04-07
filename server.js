@@ -67,6 +67,17 @@ app.post('/eRequest', (req, res) =>{
     }
 
 })
+app.get('/eHistory', (req, res) => {
+    let eid = req.session.employeeid;
+    let getQuery = `SELECT * FROM requests WHERE employee_id = ${eid}`
+    client.query(getQuery, (err,resp) => {
+        if(!err){
+            res.send(resp.rows);
+        }else{
+            console.log(err);
+        }
+    })
+})
 app.post('/login', (req,res) => {
     let employeeid = req.body.userid;
     if(employeeid) {
