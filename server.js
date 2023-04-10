@@ -103,8 +103,6 @@ app.post('/login', (req,res) => {
     }
 });
 app.get('/administratorHome', (req, res) => {
-    let eid=555149
-    if(eid) {
         let eid = req.session.employeeid
         if (eid){
         let getQuery = `Select * From employee WHERE id = ${eid}`
@@ -115,7 +113,6 @@ app.get('/administratorHome', (req, res) => {
             }
         });
         client.end;
-    }
     }
 })
 app.get('/administratorSetHoliday', (req, res) => {
@@ -134,6 +131,25 @@ app.get('/administratorSetHoliday', (req, res) => {
         } else {
             console.error(err);
             res.status(500).send('Error retrieving holidays');
+        }
+    });
+});
+app.get('/administratorCUser', (req, res) => {
+    let getQuery = `SELECT * FROM employee`;
+    client.query(getQuery, (err, resp) => {
+        if (!err) {
+            const employees = resp.rows.map(row => {
+                return {
+                    id: row.id,
+                    first_name: row.first_name,
+                    last_name: row.last_name
+                };
+            });
+            console.log(employees);
+            res.json(employees);
+        } else {
+            console.error(err);
+            res.status(500).send('Error retrieving employees');
         }
     });
 });

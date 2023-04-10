@@ -1,7 +1,6 @@
 const Holidays = ({holidays}) => {
     return (
         <div className="Holidays">
-            <span>Here are all your holidays</span>
             <table className="holidays-table">
                 <thead>
                 <tr>

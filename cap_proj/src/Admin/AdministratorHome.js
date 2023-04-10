@@ -27,14 +27,14 @@ const AdministratorHome = () => {
             <Navbar/>
             <div className="sidebar">
                 <h2> {fname} {lname} </h2>
-                <h2>Modify User</h2>
-                <h2>Delete Employee</h2>
-                <h2>Set Holidays</h2>
-                <h2>See All Request</h2>
+                <h2>Account Modification</h2>
+                <h2>Request Modification</h2>
+                <h2>Hiring..</h2>
+                <h2>See Holidays</h2>
             </div>
             <div className= "adminwelcome">
                 <h2>Welcome Admin! {fname} {lname}</h2>
-                <h2>Id #{eid}</h2>
+                <h3>Id #{eid}</h3>
             </div>
             <div className="calendarview">
                 <ACalendar/>

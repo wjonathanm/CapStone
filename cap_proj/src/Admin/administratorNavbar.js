@@ -9,7 +9,7 @@ const Navbar = () => {
                 <img style={{width: "150px", height: "65px", padding: "5px"}} src={logo} alt="aldi_logo" />
                 <div className="links">
                     <Link to="/administratorHome">Home</Link>
-                    <Link to="/administratorCalendar">Calendar</Link>
+                    <Link to="/administratorCalendar">PtoRequests</Link>
                     <Link to="/administratorSetHoliday">SetHoliday</Link>
                     <Link to="/administratorCUser">EmployeeInfo</Link>
                 </div>
