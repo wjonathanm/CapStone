@@ -123,8 +123,8 @@
   /* text-align: center; */
 }
 th, td {
-  text-align: left;
-  padding: 16px;
+  padding: 20px;
+  width: 400px;
   text-align: center;
 }
 

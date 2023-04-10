@@ -41,7 +41,7 @@ function Login() {
                     </label>
                     <br />
                     <button type="submit" className="button" value="login"> submit </button>
-                    <a href="/signup"> signup </a>
+                    <a href="/signup" className="signup"> signup </a>
                 </form>
             </div>
         </div>

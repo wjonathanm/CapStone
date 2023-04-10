@@ -78,6 +78,20 @@ app.get('/eHistory', (req, res) => {
         }
     })
 })
+app.post('/signup', (req, res)=>{
+    let eid = req.body.userid2;
+    let email = req.body.email;
+    let fname = req.body.fname;
+    let lname = req.body.lname;
+    let insertQuery = `Insert INTO employee(id,firstname,lastname,email,hiredate, leaderid, role, ptobalancevacation, ptobalancepersonal,ptobalancesick)Values('${eid}', '${fname}', '${lname}', '${email}', '2023-4-8', '12345', 'Employee', '0', '0', '0')`
+    client.query(insertQuery, (err, result) => {
+        if (!err){
+            console.log("Success")
+        }else{
+            console.log(err)
+        }
+    })
+})
 app.post('/login', (req,res) => {
     let employeeid = req.body.userid;
     if(employeeid) {

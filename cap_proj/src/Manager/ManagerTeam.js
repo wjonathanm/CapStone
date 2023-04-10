@@ -1,5 +1,6 @@
 import Navbar from "./mNav"
 import {useEffect, useState} from "react";
+import "../css/tablestyles.css"
 
 function ManagerTeam(){
   const [team, setTeams] = useState([]);
@@ -22,10 +23,10 @@ function ManagerTeam(){
           //     <div> ID: {team[i].id}</div>
           // </div>
           <tr key={i}>
-              <td>{team[i].id}</td>
-              <td>{team[i].firstname} {team[i].lastname}</td>
-              <td>{team[i].email}</td>
-              <td>{team[i].hiredate}</td>
+              <td className="data">{team[i].id}</td>
+              <td className="data">{team[i].firstname} {team[i].lastname}</td>
+              <td className="data">{team[i].email}</td>
+              <td className="data">{team[i].hiredate}</td>
 
           </tr>
       )
@@ -37,10 +38,10 @@ function ManagerTeam(){
           <table border="2">
               <thead>
                   <tr>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>email</th>
-                      <th>Hire Date</th>
+                      <th className="head">ID</th>
+                      <th className="head">Name</th>
+                      <th className="head">Email</th>
+                      <th className="head">Hire Date</th>
 
                   </tr>
               </thead>

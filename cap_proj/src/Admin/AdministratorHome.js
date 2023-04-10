@@ -17,7 +17,6 @@ const AdministratorHome = () => {
                     setEid(data[i].id);
                     setFname(data[i].firstname);
                     setLname(data[i].lastname);
-
                 }
             }
         )
