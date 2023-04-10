@@ -188,7 +188,10 @@ div.adminwelcome{
   top:25%;
   left:50%;
   margin: 0 -50% 0 0;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+}
+div.adminwelcome h3{
+  padding-left: 30%
 }
 div.calendarview{
   position: absolute;
@@ -210,4 +213,18 @@ div.sidebar h2 {
   color: white;
   font-size: 20px;
   margin: 50px 0;
+}
+div.HolidayContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+div.container1 {
+  grid-column: 1;
+  margin: 5%;
+}
+
+div.container2 {
+  grid-column: 2;
+  margin:5%;
 }

@@ -17,8 +17,8 @@ const AdministratorSetHoliday = () => {
             <div className="HolidaySet">
                 <Navbar />
                 <br />
-                <br />
-                <div className="hset-grid">
+                <div className="HolidayContainer">
+                <div className="container1">
                     <div className="holiday-form">
                         <h1>Set Holiday</h1>
                         <form>
@@ -38,12 +38,15 @@ const AdministratorSetHoliday = () => {
                             </div>
                             <br />
                             <input type="submit" value="Submit" className="request-button" />
-
                         </form>
                     </div>
+                </div>
+                <div className="container2">
+                    <h1>Holidays</h1>
                 <Holidays holidays={holidays} />
                 </div>
-                </div>
+            </div>
+            </div>
 
         );
     }
