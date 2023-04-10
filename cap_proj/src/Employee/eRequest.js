@@ -73,19 +73,21 @@ const Request = () => {
                             <label for="start">Start date:</label>
 
                             <input type="date" id="start" name="trip-start"
-                                value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31" onChange={(e)=> setSdate(e.target.value)}>
+                                value="2023-04-10"
+                                min="2023-01-01" max="2023-12-31" onChange={(e)=> setSdate(e.target.value)}>
                             </input>
+                            <span>   </span>
                             <label for="start">End date:</label>
                             <input type="date" id="start" name="trip-start"
-                                value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31" onChange={(e)=> setEdate(e.target.value)}>
+                                value="2023-04-10"
+                                min="2023-01-01" max="2023-12-31" onChange={(e)=> setEdate(e.target.value)}>
                             </input>
                         </div>
                         <br />
                         <label for="emp-reason">Reason: </label>
                         <div className="request-text">
-                            <textarea name="Reason" id="emp-reason" cols="30" rows="4" onChange={(e) => setComment(e.target.value)}></textarea>
+                            <textarea name="Reason" id="emp-reason" cols="30" rows="4" maxLength={50} onChange={(e) => setComment(e.target.value)}></textarea>
+                            <div >Max Characters: 50</div>
                         </div>
                         <br />
                         <input type="submit" value="Submit" className="request-button" />

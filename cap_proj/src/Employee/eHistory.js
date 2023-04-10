@@ -43,12 +43,14 @@ const Ehistory = () => {
                             <th>End Date</th>
                             <th>PTO Type</th>
                             <th>Request Date</th>
+                            <th>Status</th>
                         </tr>
                         <tr>
                             <td>{sdate}</td>
                             <td>{edate}</td>
                             <td>{pto}</td>
                             <td>{rdate}</td>
+                            <td>Accepted</td>
 
                         </tr>
                     </table>
