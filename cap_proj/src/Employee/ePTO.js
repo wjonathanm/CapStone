@@ -73,7 +73,42 @@ const EmployeePTO = () => {
             <br />
             {/* <br /> */}
             <div className="grid-epto-container">
-                <h1 className="emp-header">PTO Balance</h1>
+                <div className="emp-balance-header">
+                    <h1 >PTO Balance</h1>
+                    <span>Refreshes in 0 Days</span>
+                    <table className="request-table">
+                        <tr>
+                            <th> PTO </th>
+                            <th> Available </th>
+                            <th> Used </th>
+                            <th> Requested </th>
+                        </tr>
+                        <tr>
+                        <td>Vacation</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Sick</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Personal</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
                 {/* <div className="donut-graphs">
                     <div style={{ width: 200 }}>
                         Personal
@@ -93,22 +128,32 @@ const EmployeePTO = () => {
                     </div>
                 </div> */}
                 <div className="emp-header">
-                    <h1>Upcoming Days Off</h1>
+                    <h1>Upcoming 30 Days Off</h1>
                     <div className="days-off">
                         <div className="days-off-contents">Start Date</div>
                         <div className="days-off-contents">End Date</div>
                         <div className="days-off-contents">Type</div>
                     </div>
                     <div className="days-off">
-                        <div className="days-off-contents">2/24/2023</div>
-                        <div className="days-off-contents">2/25/2023</div>
+                        <div className="days-off-contents">4/24/2023</div>
+                        <div className="days-off-contents">4/25/2023</div>
                         <div className="days-off-contents">Sick</div>
                     </div>
-                    {/* <div className="days-off">
-                        <div className="days-off-contents">2/29/2023</div>
-                        <div className="days-off-contents">2/30/2023</div>
+                    <div className="days-off">
+                        <div className="days-off-contents">4/26/2023</div>
+                        <div className="days-off-contents">4/27/2023</div>
+                        <div className="days-off-contents">Personal</div>
+                    </div>
+                    <div className="days-off">
+                        <div className="days-off-contents">4/29/2023</div>
+                        <div className="days-off-contents">4/30/2023</div>
                         <div className="days-off-contents">Vacation</div>
-                    </div> */}
+                    </div>
+                    <div className="days-off">
+                        <div className="days-off-contents">5/01/2023</div>
+                        <div className="days-off-contents">5/05/2023</div>
+                        <div className="days-off-contents">Vacation</div>
+                    </div>
                 </div>
 
                 <div className="emp-header">

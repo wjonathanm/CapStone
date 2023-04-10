@@ -14,6 +14,7 @@ import ManagerHome from './Manager/mHome';
 import ManagerCalendar from './Manager/mCalendar';
 import ManagerHistory from './Manager/mHistory';
 import ManagerTeam from './Manager/ManagerTeam';
+import ManagerRequest from './Manager/mRequest'
 
 import EmployeePTO from './Employee/ePTO';
 import ERequest from './Employee/eRequest';
@@ -41,6 +42,7 @@ function App() {
             <Route path="/mCalendar" element={<ManagerCalendar />}></Route>
             <Route path="/mHistory" element={<ManagerHistory />}></Route>
             <Route path="/mteam" element={<ManagerTeam />}></Route>
+            <Route path="/mRequest" element={<ManagerRequest />}></Route>
 
             <Route path="/administratorHome" element={<AdministratorHome />}></Route>
             <Route path="/administratorCalendar" element={<AdministratorCalendar />}></Route>

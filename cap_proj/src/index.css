@@ -78,6 +78,13 @@
   justify-content: center;
   /* background-color: whitesmoke; */
 }
+.emp-balance-header{
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: whitesmoke;
+}
 .emp-header{
   text-align: center;
   padding: 20px;
@@ -227,4 +234,7 @@ div.container1 {
 div.container2 {
   grid-column: 2;
   margin:5%;
+}
+textarea.reason-box{
+  font-size: 6px;
 }
