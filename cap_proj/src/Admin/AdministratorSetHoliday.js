@@ -27,8 +27,8 @@ const AdministratorSetHoliday = () => {
                                 <label for="DateSelect">Select date:</label>
 
                                 <input type="date" id="DateSelect" name="hdate"
-                                       value="2018-07-22"
-                                       min="2018-01-01" max="2018-12-31">
+                                       value="YYYY-MM-DD"
+                                       min="2023-MM-DD" max="2023-MM-DD">
                                 </input>
                             </div>
                             <br />
