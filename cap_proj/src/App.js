@@ -4,9 +4,7 @@ import Signup from "./Login/Signup";
 import Employee from "./RouterPages/Employee";
 
 import AdministratorHome from './Admin/AdministratorHome';
-import AdministratorCalendar from './Admin/administratorCalendar';
 import AdministratorSetHoliday from './Admin/AdministratorSetHoliday';
-import AdministratorSearch from "./Admin/administratorSearch";
 import AdministratorCUser from "./Admin/AdministratorCUser";
 
 
@@ -45,9 +43,7 @@ function App() {
             <Route path="/mRequest" element={<ManagerRequest />}></Route>
 
             <Route path="/administratorHome" element={<AdministratorHome />}></Route>
-            <Route path="/administratorCalendar" element={<AdministratorCalendar />}></Route>
             <Route path="/administratorSetHoliday" element={<AdministratorSetHoliday />}></Route>
-            <Route path="/administratorSearch" element={<AdministratorSearch />}></Route>
             <Route path="/administratorCUser" element={<AdministratorCUser />}></Route>
         </Routes>
     </BrowserRouter>
