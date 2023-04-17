@@ -32,26 +32,6 @@ const Ehistory = () => {
                 <div className="emp-header">
                     <h1>History</h1>
                     <br></br>
-<<<<<<< Updated upstream
-                    <table className="e-pending-requests">
-                        <tr>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>PTO Type</th>
-                            <th>Request Date</th>
-                            <th>Status</th>
-                        </tr>
-                        {/* for (let i = 0; i < data.length; i++) { */}
-                            <tr>
-                                <td>{sdate}</td>
-                                <td>{edate}</td>
-                                <td>{pto}</td>
-                                <td>{rdate}</td>
-                                <td>Accepted</td>
-
-                            </tr>
-                        {/* } */}
-=======
                     <table border="2">
                         <thead>
                             <tr>
@@ -64,7 +44,6 @@ const Ehistory = () => {
                         <tbody>
                             {logs}
                         </tbody>
->>>>>>> Stashed changes
                     </table>
                 </div>
             </div>
