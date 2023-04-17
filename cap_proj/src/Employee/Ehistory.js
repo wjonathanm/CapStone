@@ -2,15 +2,7 @@ import Navbar from "./eNavbar";
 import {useEffect, useState} from "react";
 
 const Ehistory = () => {
-    //employee_id,leader_id,ptype,reasons,start_date,end_date
-    const [eid, seteid] = useState("");
-    const [lid, setlid] = useState("");
-    const [pto, setpto] = useState("");
-    const [reasons, setreasons] = useState("");
-    const [sdate, setsdate] = useState("");
-    const [edate, setedate] = useState("");
-    const [rdate, setrdate] = useState("");
-
+    const [requests, setRequests] = useState([]);
     useEffect(() => {
         fetch("/eHistory").then(
             response => response.json()
@@ -18,18 +10,21 @@ const Ehistory = () => {
             data => {
                 JSON.stringify(data)
                 console.log(data)
-                for (let i = 0; i < data.length; i++) {
-                    seteid(data[i].employee_id);
-                    setlid(data[i].leader_id);
-                    setpto(data[i].ptype);
-                    setreasons(data[i].reasons);
-                    setsdate(data[i].start_date);
-                    setedate(data[i].end_date);
-                    setrdate(data[i].request_date)
-                }
+                setRequests(data)
             }
         )
     }, [])
+    const logs = [];
+    for (let i in requests){
+        logs.push(
+            <tr key={i}>
+                <td>{requests[i].start_date}</td>
+                <td>{requests[i].end_date}</td>
+                <td>{requests[i].ptype}</td>
+                <td>{requests[i].request_date}</td>
+            </tr>
+        )
+    }
     return ( 
         <div>
             <Navbar />
@@ -37,6 +32,7 @@ const Ehistory = () => {
                 <div className="emp-header">
                     <h1>History</h1>
                     <br></br>
+<<<<<<< Updated upstream
                     <table className="e-pending-requests">
                         <tr>
                             <th>Start Date</th>
@@ -55,11 +51,24 @@ const Ehistory = () => {
 
                             </tr>
                         {/* } */}
+=======
+                    <table border="2">
+                        <thead>
+                            <tr>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>PTO Type</th>
+                                <th>Request Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {logs}
+                        </tbody>
+>>>>>>> Stashed changes
                     </table>
                 </div>
             </div>
         </div>
      );
 }
- 
 export default Ehistory;
