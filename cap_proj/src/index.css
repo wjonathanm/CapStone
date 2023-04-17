@@ -238,3 +238,59 @@ div.container2 {
 textarea.reason-box{
   font-size: 6px;
 }
+.employee-table-header {
+  width: 100%;
+  border-collapse: collapse;
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  z-index: 1;
+}
+
+.employee-table-header th {
+  padding: 5px;
+}
+
+.employee-table-body-wrapper {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.employee-table-body {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table-body td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+.employee-table-header {
+  width: 100%;
+  border-collapse: collapse;
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  z-index: 1;
+}
+
+.holidays-table-header th {
+  padding: 5px;
+}
+
+.holidays-table-body-wrapper {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.holidays-table-body {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.holidays-table-body td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}

@@ -87,6 +87,14 @@ const Request = () => {
                             <label for="finish">End date:</label>
                             <input type="date" id="finish" name="pto-end"
                                 value="2023-04-10"
+                            // <input type="date" id="start" name="trip-start"
+                            //     value="2023-07-22"
+                            //     min="2023-01-01" max="2023-12-31" onChange={(e)=> setSdate(e.target.value)}>
+                            // </input>
+                            // <span>   </span>
+                            // <label for="start">End date:</label>
+                            // <input type="date" id="start" name="trip-start"
+                            //     value="2023-07-22"
                                 min="2023-01-01" max="2023-12-31" onChange={(e)=> setEdate(e.target.value)}>
                             </input>
                         </div>

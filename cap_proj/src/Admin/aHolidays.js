@@ -1,7 +1,7 @@
 const Holidays = ({holidays}) => {
     return (
         <div className="Holidays">
-            <table className="holidays-table">
+            <table className="holidays-table-header">
                 <thead>
                 <tr>
                     <th> ID </th>
@@ -9,17 +9,23 @@ const Holidays = ({holidays}) => {
                     <th> Date </th>
                 </tr>
                 </thead>
-                <tbody>
+            </table>
+
+            <div className="employee-table-body-wrapper">
+                <table className="employee-table-body">
+                    <tbody>
                 {holidays.map(holiday => (
                     <tr key={holiday.holiday_id}>
                         <td>{holiday.holiday_id}</td>
                         <td>{holiday.hname}</td>
-                        <td>{holiday.hdate}</td>
+                        <td>{holiday.hdate.slice(0, 10)}</td>
                     </tr>
                 ))}
                 </tbody>
-            </table>
+                </table>
+            </div>
         </div>
+
     );
 }
 export default Holidays;

@@ -150,14 +150,18 @@ app.get('/administratorSetHoliday', (req, res) => {
     });
 });
 app.get('/administratorCUser', (req, res) => {
-    let getQuery = `SELECT * FROM employee`;
+    let getQuery = `SELECT id, firstname, lastname, email, hiredate, leaderid, role FROM employee`;
     client.query(getQuery, (err, resp) => {
         if (!err) {
             const employees = resp.rows.map(row => {
                 return {
                     id: row.id,
-                    first_name: row.first_name,
-                    last_name: row.last_name
+                    firstname: row.firstname,
+                    lastname: row.lastname,
+                    email: row.email,
+                    hiredate: row.hiredate,
+                    leaderid: row.leaderid,
+                    role: row.role
                 };
             });
             console.log(employees);
