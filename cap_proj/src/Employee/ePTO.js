@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 // import { UserData } from "./eData";
 // import DoughnutChart from "../Components/DoughnutChart";
 
+
 const EmployeePTO = () => {
     const [eid, setEid] = useState("")
     const [fname, setFname] = useState("")
@@ -38,6 +39,7 @@ const EmployeePTO = () => {
             }
         )
     }, [])
+    // const total=personal+sick+
     // const [backEndData, setbackEndData] = useState('');
     // useEffect(() => {
     //     fetch("/login" )
@@ -85,25 +87,25 @@ const EmployeePTO = () => {
                         </tr>
                         <tr>
                         <td>Vacation</td>
-                            <td>0</td>
+                            <td>{vacation}</td>
                             <td>0</td>
                             <td>0</td>
                         </tr>
                         <tr>
                             <td>Sick</td>
-                            <td>0</td>
+                            <td>{sick}</td>
                             <td>0</td>
                             <td>0</td>
                         </tr>
                         <tr>
                             <td>Personal</td>
-                            <td>0</td>
+                            <td>{personal}</td>
                             <td>0</td>
                             <td>0</td>
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td>0</td>
+                            <td>{personal+sick+vacation}</td>
                             <td>0</td>
                             <td>0</td>
                         </tr>

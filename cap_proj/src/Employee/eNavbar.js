@@ -51,9 +51,9 @@ const Navbar = () => {
             </div>
             <div className="navbar-bottom">
                 <ul className="list">
-                    <li className="items">First and Last Name: {Fname} {Lname}</li>
-                    <li className="items">ID: {Eid}</li>
-                    <li className="items">Anniversary Date</li>
+                    <li className="items">{Fname} {Lname}</li>
+                    <li className="items">{Eid}</li>
+                    <li className="items">{Hiredate}</li>
                 </ul>
             </div>
         </nav>

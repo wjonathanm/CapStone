@@ -70,6 +70,7 @@ app.post('/eRequest', (req, res) =>{
 app.get('/eHistory', (req, res) => {
     let eid = req.session.employeeid;
     let getQuery = `SELECT * FROM requests WHERE employee_id = ${eid}`
+    // let getQuery = `SELECT request_status.a, requests.b FROM (SELECT * from holiday) as x, (SELECT * FROM b) as y FROM requests WHERE employee_id = ${eid}`
     client.query(getQuery, (err,resp) => {
         if(!err){
             res.send(resp.rows);

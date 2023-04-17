@@ -2,9 +2,10 @@ import Navbar from "./eNavbar";
 import { useState } from "react";
 import 'react-calendar/dist/Calendar.css'
 // import Calendar from 'react-calendar'
+import Popup from "../Components/Popup";
 
 const Request = () => {
-    
+    const [buttonPopup, setButtonPopup]=useState(false)
     // const [date, setDate] = useState(new Date())
     const [ ptype, setPtype ] = useState("")
     const [ sDate, setSdate ] = useState("")
@@ -26,6 +27,7 @@ const Request = () => {
     }
     return ( 
         <div className="eRequest">
+            
             <Navbar />
             <br />
             <br />
@@ -53,6 +55,10 @@ const Request = () => {
                             </select>
                         </span>
                         <br />
+                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                            <h3>Request Submitted</h3>
+                            {/* <p></p> */}
+                        </Popup>
                         <br />
                         {/* <div style={{display:"inline-block"}}>
                             <Calendar onChange={setDate} value={date} selectRange={true} />
@@ -69,16 +75,17 @@ const Request = () => {
                         </p>
                                 )}
                         <br /> */}
+                        
                         <div className="request-calendar">
                             <label for="start">Start date:</label>
 
-                            <input type="date" id="start" name="trip-start"
+                            <input type="date" id="start" name="pto-start"
                                 value="2023-04-10"
                                 min="2023-01-01" max="2023-12-31" onChange={(e)=> setSdate(e.target.value)}>
                             </input>
                             <span>   </span>
-                            <label for="start">End date:</label>
-                            <input type="date" id="start" name="trip-start"
+                            <label for="finish">End date:</label>
+                            <input type="date" id="finish" name="pto-end"
                                 value="2023-04-10"
                                 min="2023-01-01" max="2023-12-31" onChange={(e)=> setEdate(e.target.value)}>
                             </input>
@@ -90,7 +97,7 @@ const Request = () => {
                             <div >Max Characters: 50</div>
                         </div>
                         <br />
-                        <input type="submit" value="Submit" className="request-button" />
+                        <input type="submit" value="Submit" className="request-button" onClick={()=>setButtonPopup(true)} />
                         
                     </form>
                 </div>
