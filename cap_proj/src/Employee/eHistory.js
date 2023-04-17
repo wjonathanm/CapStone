@@ -45,14 +45,16 @@ const Ehistory = () => {
                             <th>Request Date</th>
                             <th>Status</th>
                         </tr>
-                        <tr>
-                            <td>{sdate}</td>
-                            <td>{edate}</td>
-                            <td>{pto}</td>
-                            <td>{rdate}</td>
-                            <td>Accepted</td>
+                        {/* for (let i = 0; i < data.length; i++) { */}
+                            <tr>
+                                <td>{sdate}</td>
+                                <td>{edate}</td>
+                                <td>{pto}</td>
+                                <td>{rdate}</td>
+                                <td>Accepted</td>
 
-                        </tr>
+                            </tr>
+                        {/* } */}
                     </table>
                 </div>
             </div>
