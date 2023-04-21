@@ -17,8 +17,8 @@ const Holidays = ({holidays}) => {
                 {holidays.map(holiday => (
                     <tr key={holiday.holiday_id}>
                         <td>{holiday.holiday_id}</td>
-                        <td>{holiday.hname}</td>
-                        <td>{holiday.hdate.slice(0, 10)}</td>
+                        <td>{holiday.holiday_name}</td>
+                        <td>{holiday.holiday_date.slice(0, 10)}</td>
                     </tr>
                 ))}
                 </tbody>

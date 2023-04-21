@@ -1,8 +1,7 @@
 import Navbar from "./administratorNavbar";
-import 'react-calendar/dist/Calendar.css'
-import {useEffect, useState} from "react";
+import 'react-calendar/dist/Calendar.css';
+import { useEffect, useState } from "react";
 import Holidays from "./aHolidays";
-
 
 const AdministratorSetHoliday = () => {
     const [holidays, setHolidays] = useState([]);
@@ -14,25 +13,23 @@ const AdministratorSetHoliday = () => {
     }, []);
 
     return (
-            <div className="HolidaySet">
-                <Navbar />
-                <br />
-                <div className="HolidayContainer">
+        <div className="HolidaySet">
+            <Navbar />
+            <br />
+            <div className="HolidayContainer">
                 <div className="container1">
                     <div className="holiday-form">
                         <h1>Set Holiday</h1>
                         <form>
                             <br />
                             <div className="hset-calendar">
-                                <label for="DateSelect">Select date:</label>
-
-                                <input type="date" id="DateSelect" name="hdate">
-                                </input>
+                                <label htmlFor="DateSelect">Select date:</label>
+                                <input type="date" id="DateSelect" name="date" />
                             </div>
                             <br />
-                            <label for="HolidayName">Type Holiday Name </label>
+                            <label htmlFor="HolidayName">Type Holiday Name </label>
                             <div className="request-text">
-                                <textarea name="hname" id="holiday_id" cols="1" rows="1"></textarea>
+                                <textarea name="name" id="HolidayName" cols="1" rows="1"></textarea>
                             </div>
                             <br />
                             <input type="submit" value="Submit" className="request-button" />
@@ -41,12 +38,11 @@ const AdministratorSetHoliday = () => {
                 </div>
                 <div className="container2">
                     <h1>Holidays</h1>
-                <Holidays holidays={holidays} />
+                    <Holidays holidays={holidays} />
                 </div>
             </div>
-            </div>
-
-        );
-    }
+        </div>
+    );
+};
 
 export default AdministratorSetHoliday;

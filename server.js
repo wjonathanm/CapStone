@@ -137,8 +137,8 @@ app.get('/administratorSetHoliday', (req, res) => {
             const holidays = resp.rows.map(row => {
                 return {
                     holiday_id: row.holiday_id,
-                    hname: row.hname,
-                    hdate: row.hdate
+                    holiday_name: row.holiday_name,
+                    holiday_date: row.holiday_date
                 };
             });
             console.log(holidays);
