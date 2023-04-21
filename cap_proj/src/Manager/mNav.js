@@ -44,7 +44,7 @@ const Navbar = () => {
                     <Link to="/mHome">Home</Link>
                     <Link to="/mteam">Team</Link>
                     <Link to="/mHistory">History</Link>
-                    <Link to="/mCalendar">Calendar</Link>
+                    <Link to="/mEQ">EmployeeReq</Link>
                     <Link to="/mRequest">Request</Link>
                 </div>
                 <div className="nav-button">
