@@ -285,12 +285,13 @@ textarea.reason-box{
   overflow-y: scroll;
 }
 
-.holidays-table-body {
+.holidays-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.holidays-table-body td {
+.holidays-table td {
   padding: 10px;
   border: 1px solid #ccc;
 }
+/****************************/
