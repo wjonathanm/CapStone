@@ -1,7 +1,17 @@
+import Holidays from "../Admin/aHolidays";
 import Navbar from "./mNav";
+import { useState } from "react";
+import { useEffect } from "react";
 
+const ManagerHome = () => {
+    const [holidays, setHolidays] = useState ([]);
 
-const managerHome = () => {
+    useEffect(() => {
+        fetch("/administratorSetHoliday")
+            .then(response => response.json())
+            .then(data => setHolidays(data));
+    }, []);
+
     return ( 
         <div>
             <Navbar />
@@ -65,7 +75,7 @@ const managerHome = () => {
                         </tr>
                     </table>
                 </div>
-                <div className="emp-header">
+                {/* <div className="emp-header">
                     <h1 >Holidays</h1>
                     <div className="holiday-table">
                         <br/>
@@ -76,12 +86,13 @@ const managerHome = () => {
                         <br/>
                         <div className="holidays">Holdiay Name</div>
                         <div className="holidays">Holdiay Date</div>
-                    </div>
-                    
-                </div>
+                    </div> */}
+                    {/* </div> */}
+                    <Holidays holidays={holidays} />
+                
             </div>
         </div>
      );
 }
  
-export default managerHome;
+export default ManagerHome;

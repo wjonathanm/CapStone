@@ -9,7 +9,7 @@ import AdministratorCUser from "./Admin/AdministratorCUser";
 
 
 import ManagerHome from './Manager/mHome';
-import ManagerCalendar from './Manager/mCalendar';
+import EmployeesReq from './Manager/mEQ';
 import ManagerHistory from './Manager/mHistory';
 import ManagerTeam from './Manager/ManagerTeam';
 import ManagerRequest from './Manager/mRequest'
@@ -37,7 +37,7 @@ function App() {
             <Route path="/eCalendar" element={<ECalendar />}></Route>
 
             <Route path="/mHome" element={<ManagerHome />}></Route>
-            <Route path="/mCalendar" element={<ManagerCalendar />}></Route>
+            <Route path="/mEQ" element={<EmployeesReq />}></Route>
             <Route path="/mHistory" element={<ManagerHistory />}></Route>
             <Route path="/mteam" element={<ManagerTeam />}></Route>
             <Route path="/mRequest" element={<ManagerRequest />}></Route>
