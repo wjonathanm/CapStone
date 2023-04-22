@@ -72,6 +72,18 @@ a.signup:link{
 /*    text-decoration: none;*/
 /*}*/
 
+.beginning2{
+    background-image: url("../imgs/healthy-aldi-finds-coming-to-store-copy.jpg");
+    background-size: 1540px;
+    padding: 17px;
+}
+.signu {
+    max-width: 450px;
+    margin: 115px auto;
+    padding: 58px;
+    background-image: url("../imgs/ASG_SER_MC_RGB.png");
+    background-size: 450px;
+}
 .label2 {
     font-size: 15px;
     text-align: left;
@@ -86,7 +98,8 @@ a.signup:link{
     text-align: center;
     width: 85%;
     padding-left: 6px;
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-left: 20px;
     margin-top: 0;
     margin-bottom: 0;

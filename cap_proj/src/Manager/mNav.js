@@ -6,13 +6,8 @@ const Navbar = () => {
     const [Eid, setEid] = useState("")
     const [Fname, setFname] = useState("")
     const [Lname, setLname] = useState("")
-    const [Email, setEmail] = useState("")
     const [Hiredate, setHireDate] = useState("")
-    const [Lid, setLid] = useState("")
     const [Role, setRole] = useState("")
-    const [Sick, setSick] = useState("")
-    const [Personal, setPersonal] = useState("")
-    const [Vacation, setVacation] = useState("")
     useEffect(() => {
         fetch("/ePTO").then(
             response => response.json()
@@ -22,16 +17,10 @@ const Navbar = () => {
                 console.log(data)
                 for (let i = 0; i < data.length; i++) {
                     setEid(data[i].id);
-                    setEmail(data[i].email);
                     setFname(data[i].firstname);
                     setLname(data[i].lastname);
-                    setLid(data[i].leaderid);
-                    setRole(data[i].role);
-                    setSick(data[i].ptobalancesick);
-                    setPersonal(data[i].ptobalancepersonal);
-                    setVacation(data[i].ptobalancevacation);
                     setHireDate(data[i].hiredate);
-
+                    setRole(data[i].role)
                 }
             }
         )
@@ -55,7 +44,7 @@ const Navbar = () => {
                 <ul className="list">
                     <li className="items">First and Last Name: {Fname} {Lname}</li>
                     <li className="items">ID: {Eid}</li>
-                    <li className="items">Anniversary Date</li>
+                    <li className="items">Anniversary Date: {Hiredate.slice(0,10)}</li>
                 </ul>
             </div>
         </nav>
