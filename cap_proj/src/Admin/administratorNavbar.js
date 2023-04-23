@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import logo from '../imgs/aldi_logo1.png';
 
 const Navbar = () => {
-
+    const navigate = useNavigate()
+    function Logout(){
+        sessionStorage.clear();
+        navigate("/")
+    }
     return (
         <nav className="navbar">
             <div className="navbar-top">
@@ -13,9 +17,7 @@ const Navbar = () => {
                     <Link to="/administratorCUser">EmployeeInfo</Link>
                 </div>
                 <div className="nav-button">
-                    <Link to="/">
-                        <button className="log-out" >Log Out</button>
-                    </Link>
+                    <button className="log-out" onClick={Logout}>Log Out</button>
                 </div>
             </div>
         </nav>
