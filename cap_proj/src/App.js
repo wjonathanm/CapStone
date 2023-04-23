@@ -6,6 +6,9 @@ import Employee from "./RouterPages/Employee";
 import AdministratorHome from './Admin/AdministratorHome';
 import AdministratorSetHoliday from './Admin/AdministratorSetHoliday';
 import AdministratorCUser from "./Admin/AdministratorCUser";
+import AdministratorModifyUser from './Admin/AdministratorModifyUser';
+import AdministratorModifyRequests from './Admin/AdministratorModifyRequests';
+import AdministratorHolidays from "./Admin/AdministratorHolidays";
 
 
 import ManagerHome from './Manager/mHome';
@@ -45,6 +48,9 @@ function App() {
             <Route path="/administratorHome" element={<AdministratorHome />}></Route>
             <Route path="/administratorSetHoliday" element={<AdministratorSetHoliday />}></Route>
             <Route path="/administratorCUser" element={<AdministratorCUser />}></Route>
+            <Route path="/administratorModifyUser" element={<AdministratorModifyUser />}></Route>
+            <Route path="/administratorModifyRequests" element={<AdministratorModifyRequests />}></Route>
+            <Route path="/administratorSeeHolidays" element={<AdministratorHolidays />}></Route>
         </Routes>
     </BrowserRouter>
   );

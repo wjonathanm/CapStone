@@ -131,6 +131,7 @@ app.get('/administratorHome', (req, res) => {
         client.end;
     }
 })
+
 app.get('/administratorSetHoliday', (req, res) => {
     let getQuery = `SELECT * FROM holiday`;
     client.query(getQuery, (err, resp) => {
@@ -193,7 +194,30 @@ app.get('/administratorCUser', (req, res) => {
     });
 });
 
-
+app.get('/administratorModifyRequests', (req, res) => {
+    let getQuery = `SELECT request_id, employee_id, leader_id, ptype, reasons, start_date, end_date, request_date FROM requests`;
+    client.query(getQuery, (err, resp) => {
+        if (!err) {
+            const requests = resp.rows.map(row => {
+                return {
+                    request_id: row.request_id,
+                    employee_id: row.employee_id,
+                    leader_id: row.leader_id,
+                    ptype:row.ptype,
+                    reasons: row.reasons,
+                    start_date: row.start_date,
+                    end_date: row.end_date,
+                    request_date: row.request_date
+                };
+            });
+            console.log(requests);
+            res.json(requests);
+        } else {
+            console.error(err);
+            res.status(500).send('Error retrieving employees');
+        }
+    });
+});
 
 // app.get('/ePTO', (req ,res) => {
 //     let employeeid = req.session.employeeid;

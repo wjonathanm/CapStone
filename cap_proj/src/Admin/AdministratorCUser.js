@@ -13,15 +13,15 @@ const AdministratorCUser = () => {
 
     return (
 
-<div className="EmployeesShow">
-    <Navbar />
-    <br />
-    <br />
-    <h1>Employees</h1>
-    <Employees employees={employees} />
-</div>
 
 
+    <div className="EmployeesShow">
+        <Navbar />
+        <br />
+        <br />
+        <h1>Employees</h1>
+        <Employees employees={employees} />
+    </div>
     );
 }
 

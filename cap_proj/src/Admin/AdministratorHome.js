@@ -29,7 +29,7 @@ const AdministratorHome = () => {
                 <h2> Remote Access </h2>
                     <h4><Link to="/administratorModifyUser">Modify User</Link></h4>
                     <h4><Link to="/administratorModifyRequests">Modify Request</Link></h4>
-                    <h4><Link to="/administratorSeeHolidays">See Holidays</Link></h4>
+                    <h4><Link to="/administratorSeeHolidays">Modify Holidays</Link></h4>
             </div>
             <div className= "adminwelcome">
                 <h2>Welcome Admin! {fname} {lname}</h2>
