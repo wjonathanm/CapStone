@@ -11,6 +11,11 @@ function Signup(){
     const navigate = useNavigate();
     const handleSubmit = (e) =>{
         e.preventDefault();
+
+        if (!["director", "manager", "employee"].includes(role)) {
+            alert("Please enter a valid role (director/manager/employee).");
+            return;
+        }
         const employee = { userid2, fname, lname, email, role };
 
         fetch('/signup', {
@@ -39,7 +44,7 @@ function Signup(){
                         Email:<input className='input2' required value={email} onChange={(e) => setEmail(e.target.value)}/>
                     </label>
                     <label className='label2'>
-                        Role:<input className='input2' required value={role} onChange={(e) => setRole(e.target.value)}/>
+                        Role:<input className='input2' required value={role} onChange={(e) => setRole(e.target.value.toLowerCase())}/>
                     </label>
                     <button className='button2' type='submit' name='signup' value='signup' onClick='/'> Submit </button>
                 </form>
