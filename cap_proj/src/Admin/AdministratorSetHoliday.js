@@ -12,6 +12,27 @@ const AdministratorSetHoliday = () => {
             .then(data => setHolidays(data));
     }, []);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const holiday_name = formData.get('holiday_name');
+        const holiday_date = formData.get('holiday_date');
+        fetch('/administratorSetHoliday', {
+            method: 'POST',
+            body: JSON.stringify({ holiday_name, holiday_date }),
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(response => response.json())
+            .then(data => {
+                setHolidays(prevHolidays => [...prevHolidays, data]);
+                form.reset();
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+
     return (
         <div className="HolidaySet">
             <Navbar />
@@ -20,16 +41,16 @@ const AdministratorSetHoliday = () => {
                 <div className="container1">
                     <div className="holiday-form">
                         <h1>Set Holiday</h1>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <br />
                             <div className="hset-calendar">
                                 <label htmlFor="DateSelect">Select date:</label>
-                                <input type="date" id="DateSelect" name="date" />
+                                <input type="date" id="DateSelect" name="holiday_date" required />
                             </div>
                             <br />
                             <label htmlFor="HolidayName">Type Holiday Name </label>
                             <div className="request-text">
-                                <textarea name="name" id="HolidayName" cols="1" rows="1"></textarea>
+                                <textarea name="holiday_name" id="HolidayName" cols="1" rows="1" required></textarea>
                             </div>
                             <br />
                             <input type="submit" value="Submit" className="request-button" />

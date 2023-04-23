@@ -149,6 +149,25 @@ app.get('/administratorSetHoliday', (req, res) => {
         }
     });
 });
+app.post('/administratorSetHoliday', (req, res) => {
+    const { holiday_name, holiday_date } = req.body;
+    const addQuery = `INSERT INTO holiday (holiday_name, holiday_date) VALUES ($1, $2) RETURNING *`;
+    const values = [holiday_name, holiday_date];
+    client.query(addQuery, values, (err, resp) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error adding holiday');
+        } else {
+            const newHoliday = {
+                holiday_name: resp.rows[0].holiday_name,
+                holiday_date: resp.rows[0].holiday_date
+            };
+            console.log(`Added holiday: ${JSON.stringify(newHoliday)}`);
+            res.json(newHoliday);
+        }
+    });
+});
+
 app.get('/administratorCUser', (req, res) => {
     let getQuery = `SELECT id, firstname, lastname, email, hiredate, leaderid, role FROM employee`;
     client.query(getQuery, (err, resp) => {
@@ -169,27 +188,6 @@ app.get('/administratorCUser', (req, res) => {
         } else {
             console.error(err);
             res.status(500).send('Error retrieving employees');
-        }
-    });
-});
-
-
-app.post('/administratorSetHoliday', (req, res) => {
-    const { hname, hdate } = req.body;
-    const addQuery = `INSERT INTO holiday (hname, hdate) VALUES ($1, $2) RETURNING *`;
-    const values = [hname, hdate];
-    client.query(addQuery, values, (err, resp) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Error adding holiday');
-        } else {
-            const newHoliday = {
-                holiday_id: resp.rows[0].holiday_id,
-                hname: resp.rows[0].hname,
-                hdate: resp.rows[0].hdate
-            };
-            console.log(`Added holiday: ${JSON.stringify(newHoliday)}`);
-            res.json(newHoliday);
         }
     });
 });
