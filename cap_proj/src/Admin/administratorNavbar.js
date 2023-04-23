@@ -1,12 +1,15 @@
 import {Link, useNavigate} from "react-router-dom";
 import logo from '../imgs/aldi_logo1.png';
 
-const Navbar = () => {
-    const navigate = useNavigate()
-    function Logout(){
-        sessionStorage.clear();
-        navigate("/")
-    }
+    const Navbar = () => {
+        const navigate = useNavigate();
+
+        function Logout() {
+            sessionStorage.clear();
+            navigate("/");
+            window.history.pushState({}, null, "/");
+            window.location.replace("/");
+        }
     return (
         <nav className="navbar">
             <div className="navbar-top">

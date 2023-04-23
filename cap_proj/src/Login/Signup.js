@@ -7,10 +7,11 @@ function Signup(){
     const [email, setEmail] = useState('');
     const [fname, setFname] = useState('');
     const [lname, setLname] = useState('');
+    const [role, setRole] = useState('');
     const navigate = useNavigate();
     const handleSubmit = (e) =>{
         e.preventDefault();
-        const employee = { userid2, fname, lname, email };
+        const employee = { userid2, fname, lname, email, role };
 
         fetch('/signup', {
             method: 'POST',
@@ -36,6 +37,9 @@ function Signup(){
                     </label>
                     <label className='label2'>
                         Email:<input className='input2' required value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    </label>
+                    <label className='label2'>
+                        Role:<input className='input2' required value={role} onChange={(e) => setRole(e.target.value)}/>
                     </label>
                     <button className='button2' type='submit' name='signup' value='signup' onClick='/'> Submit </button>
                 </form>

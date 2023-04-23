@@ -84,7 +84,8 @@ app.post('/signup', (req, res)=>{
     let email = req.body.email;
     let fname = req.body.fname;
     let lname = req.body.lname;
-    let insertQuery = `Insert INTO employee(id,firstname,lastname,email,hiredate, leaderid, role, ptobalancevacation, ptobalancepersonal,ptobalancesick)Values('${eid}', '${fname}', '${lname}', '${email}', '2023-4-8', '12345', 'Employee', '0', '0', '0')`
+    let role = req.body.role;
+    let insertQuery = `Insert INTO employee(id,firstname,lastname,email,hiredate, leaderid, role, ptobalancevacation, ptobalancepersonal,ptobalancesick)Values('${eid}', '${fname}', '${lname}', '${email}', '2023-4-8', '12345', '${role}', '0', '0', '0')`
     client.query(insertQuery, (err, result) => {
         if (!err){
             console.log("Success")

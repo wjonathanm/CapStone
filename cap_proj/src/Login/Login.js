@@ -16,11 +16,11 @@ function Login() {
         }).then(resp => resp.json()
         ).then(data => {
             for( let i = 0; i < data.length; i++){
-                if(data[i].role === "Employee"){
+                if (data[i].role.toLowerCase() === "employee") {
                     navigate("/ePTO");
-                }else if(data[i].role === "Manager"){
+                } else if (data[i].role.toLowerCase() === "manager") {
                     navigate("/mHome");
-                }else if(data[i].role === "Director"){
+                } else if (data[i].role.toLowerCase() === "director") {
                     navigate("/administratorHome");
                 }else{
                     alert("Employee not Found.")
