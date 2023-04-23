@@ -23,10 +23,18 @@ const Navbar = () => {
             }
         )
     }, [])
-    function Logout(){
+    //New One jj
+    function Logout() {
         sessionStorage.clear();
-        navigate("/")
+        navigate("/");
+        window.history.pushState({}, null, "/");
+        window.location.replace("/");
     }
+    //Old one
+    // function Logout(){
+    //     sessionStorage.clear();
+    //     navigate("/")
+    // }
     return ( 
         <nav className="navbar">
             <div className="navbar-top">

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import logo from '../imgs/aldi_logo1.png';
 import {useEffect, useState} from "react";
 
@@ -8,6 +8,9 @@ const Navbar = () => {
     const [Lname, setLname] = useState("")
     const [Hiredate, setHireDate] = useState("")
     const [Role, setRole] = useState("")
+    //jj
+    const navigate = useNavigate()
+        //
     useEffect(() => {
         fetch("/ePTO").then(
             response => response.json()
@@ -25,6 +28,13 @@ const Navbar = () => {
             }
         )
     }, [])
+    //New One jj
+    function Logout() {
+        sessionStorage.clear();
+        navigate("/");
+        window.history.pushState({}, null, "/");
+        window.location.replace("/");
+    }
     return ( 
         <nav className="navbar">
             <div className="navbar-top">
@@ -37,7 +47,7 @@ const Navbar = () => {
                     <Link to="/mRequest">Request</Link>
                 </div>
                 <div className="nav-button">
-                    <button className="log-out" >Log Out</button>
+                    <button className="log-out" onClick={Logout}>Log Out</button>
                 </div>
             </div>
             <div className="navbar-bottom">
