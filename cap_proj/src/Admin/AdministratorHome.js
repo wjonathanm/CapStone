@@ -1,6 +1,7 @@
 import Navbar from "./administratorNavbar";
 import ACalendar from "./aCalendar";
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 const AdministratorHome = () => {
     const [eid, setEid] = useState("")
@@ -25,10 +26,10 @@ const AdministratorHome = () => {
         <div>
             <Navbar/>
             <div className="sidebar">
-                <h2> {fname} {lname} </h2>
-                <h2>Modify User</h2>
-                <h2>Modify Request</h2>
-                <h2>See Holidays</h2>
+                <h2> Remote Access </h2>
+                    <h4><Link to="/administratorModifyUser">Modify User</Link></h4>
+                    <h4><Link to="/administratorModifyRequests">Modify Request</Link></h4>
+                    <h4><Link to="/administratorSeeHolidays">See Holidays</Link></h4>
             </div>
             <div className= "adminwelcome">
                 <h2>Welcome Admin! {fname} {lname}</h2>

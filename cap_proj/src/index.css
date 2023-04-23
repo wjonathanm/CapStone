@@ -207,19 +207,42 @@ div.calendarview{
   margin: 0 -50% 0 0;
   transform: translate(-50%, -50%)
 }
+div.sidebar a {
+  text-decoration: none;
+  color: white;
+}
+div.sidebar a:hover {
+  color: #4169B9;
+}
 div.sidebar {
-  background-color: grey;
+  position: fixed;
+  top: 105px;
+  left: 0;
+  height: calc(100vh - 105px); /* set the height to the viewport height minus navbar height */
   width: 200px;
-  height: 150%;
-  padding: 30px;
+  background-color: grey;
+  padding: 10px;
   box-sizing: border-box;
   border-right: 1px solid black;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 div.sidebar h2 {
   color: white;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+div.sidebar h4 {
+  color: white;
+  text-decoration: none;
   font-size: 20px;
-  margin: 50px 0;
+  padding-bottom: 100px;
+  margin-bottom: 10px;
 }
 div.HolidayContainer {
   display: grid;
