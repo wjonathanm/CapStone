@@ -18,10 +18,10 @@ const Ehistory = () => {
     for (let i in requests){
         logs.push(
             <tr key={i}>
-                <td>{requests[i].start_date}</td>
-                <td>{requests[i].end_date}</td>
+                <td>{requests[i].start_date.slice(0, 10)}</td>
+                <td>{requests[i].end_date.slice(0, 10)}</td>
                 <td>{requests[i].ptype}</td>
-                <td>{requests[i].request_date}</td>
+                <td>{requests[i].request_date.slice(0, 10)}</td>
             </tr>
         )
     }
