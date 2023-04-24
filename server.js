@@ -28,7 +28,14 @@ app.get('/ePTO', (req, res) => {
                 res.send(resp.rows)
             }
         });
-        client.end;
+        // let getQuery2 = `Select * From holiday`
+        // client.query(getQuery2, (err, resp) => {
+        //     if(!err){
+        //         // console.log(resp.rows)
+        //         res.send(resp.rows)
+        //     }
+        // });
+        // client.end;
     }
 })
 app.get('/mTeam', (req, res) => {

@@ -5,6 +5,24 @@ import 'react-calendar/dist/Calendar.css'
 import Popup from "../Components/Popup";
 
 const Request = () => {
+    const options = [
+        {
+          label: "Select",
+          value: "",
+        },
+        {
+          label: "Vacation",
+          value: "Vacation",
+        },
+        {
+          label: "Sick",
+          value: "Sick",
+        },
+        {
+          label: "Personal",
+          value: "Personal",
+        },
+      ];
     const [buttonPopup, setButtonPopup]=useState(false)
     // const [date, setDate] = useState(new Date())
     const [ ptype, setPtype ] = useState("")
@@ -45,13 +63,13 @@ const Request = () => {
                         <br />
                         <span>PTO Type:</span>
                         <span className="custom-select">
-                            <select onChange={(e) => setPtype(e.target.value)}>
-                                {/*<option value="Vacation">Vacation</option>*/}
-                                {/*<option value="Sick">Sick</option>*/}
-                                {/*<option value="Personal">Personal</option>*/}
-                                <option value="Vacation">Vacation</option>
+                            <select onChange={(e) => setPtype(e.target.value)} required>
+                                {options.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                ))}
+                                {/* <option value="Vacation">Vacation</option>
                                 <option value="Sick">Sick</option>
-                                <option value="Personal">Personal</option>
+                                <option value="Personal">Personal</option> */}
                             </select>
                         </span>
                         <br />
@@ -79,13 +97,13 @@ const Request = () => {
                         <div className="request-calendar">
                             <label for="start">Start date:</label>
 
-                            <input type="date" id="start" name="pto-start"
+                            <input type="date" id="start" name="pto-start" required
                                 // value="2023-04-10"
                                 min="2023-04-17" max="2023-12-31" onChange={(e)=> setSdate(e.target.value)}>
                             </input>
                             <span>   </span>
                             <label for="finish">End date:</label>
-                            <input type="date" id="finish" name="pto-end"
+                            <input type="date" id="finish" name="pto-end" required
                                 // value="2023-04-10"
                             // <input type="date" id="start" name="trip-start"
                             //     value="2023-07-22"

@@ -16,6 +16,8 @@ const EmployeePTO = () => {
     const [sick, setSick] = useState("")
     const [personal, setPersonal] = useState("")
     const [vacation, setVacation] = useState("")
+    // const [holidayname,setHolidayname]=useState("")
+    // const [holidaydate,setHolidaydate]=useState("")   
     useEffect(() => {
         fetch("/ePTO").then(
             response => response.json()
@@ -34,6 +36,8 @@ const EmployeePTO = () => {
                     setPersonal(data[i].ptobalancepersonal);
                     setVacation(data[i].ptobalancevacation);
                     setHireDate(data[i].hiredate);
+                    // setHolidayname(data[i].holidayname);
+                    // setHolidaydate(data[i].holidaydate);
 
                 }
             }
@@ -184,11 +188,11 @@ const EmployeePTO = () => {
                         <div className="holidays">Christmas</div>
                         <div className="holidays">12/15/2023</div>
                     </div>
-                    <div className="holiday-table">
+                    {/* <div className="holiday-table">
                         <br/>
-                        <div className="holidays">Holdiay Name</div>
-                        <div className="holidays">Holdiay Date</div>
-                    </div>
+                        <div className="holidays">{holidayname}</div>
+                        <div className="holidays">{holidaydate}</div>
+                    </div> */}
 
                 </div>
             </div>
