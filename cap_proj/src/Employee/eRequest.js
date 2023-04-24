@@ -5,6 +5,21 @@ import 'react-calendar/dist/Calendar.css'
 import Popup from "../Components/Popup";
 
 const Request = () => {
+    // var today = new Date();
+    // var dd = today.getDate();
+    // var mm = today.getMonth() + 1; //January is 0!
+    // var yyyy = today.getFullYear();
+
+    // if (dd < 10) {
+    // dd = '0' + dd;
+    // }
+
+    // if (mm < 10) {
+    // mm = '0' + mm;
+    // } 
+        
+    // today = yyyy + '-' + mm + '-' + dd;
+    // document.getElementById("datefield").setAttribute("max", today);
     const options = [
         {
           label: "Select",
@@ -99,7 +114,7 @@ const Request = () => {
 
                             <input type="date" id="start" name="pto-start" required
                                 // value="2023-04-10"
-                                min="2023-04-17" max="2023-12-31" onChange={(e)=> setSdate(e.target.value)}>
+                                min="2023-04-24" max="2023-12-31" onChange={(e)=> setSdate(e.target.value)}>
                             </input>
                             <span>   </span>
                             <label for="finish">End date:</label>
@@ -113,7 +128,7 @@ const Request = () => {
                             // <label for="start">End date:</label>
                             // <input type="date" id="start" name="trip-start"
                             //     value="2023-07-22"
-                                min="2023-04-17" max="2023-12-31" onChange={(e)=> setEdate(e.target.value)}>
+                                min="2023-04-24" max="2023-12-31" onChange={(e)=> setEdate(e.target.value)}>
                             </input>
                         </div>
                         <br />
