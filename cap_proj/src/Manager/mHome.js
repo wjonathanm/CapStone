@@ -5,12 +5,47 @@ import { useEffect } from "react";
 
 const ManagerHome = () => {
     const [holidays, setHolidays] = useState ([]);
+    const [eid, setEid] = useState("")
+    const [fname, setFname] = useState("")
+    const [lname, setLname] = useState("")
+    const [email, setEmail] = useState("")
+    const [hiredate, setHireDate] = useState("")
+    const [lid, setLid] = useState("")
+    const [role, setRole] = useState("")
+    const [sick, setSick] = useState("")
+    const [personal, setPersonal] = useState("")
+    const [vacation, setVacation] = useState("")
 
     useEffect(() => {
         fetch("/administratorSetHoliday")
             .then(response => response.json())
             .then(data => setHolidays(data));
     }, []);
+    useEffect(() => {
+        fetch("/ePTO").then(
+            response => response.json()
+        ).then(
+            data => {
+                JSON.stringify(data)
+                console.log(data)
+                for (let i = 0; i < data.length; i++) {
+                    setEid(data[i].id);
+                    setEmail(data[i].email);
+                    setFname(data[i].firstname);
+                    setLname(data[i].lastname);
+                    setLid(data[i].leaderid);
+                    setRole(data[i].role);
+                    setSick(data[i].ptobalancesick);
+                    setPersonal(data[i].ptobalancepersonal);
+                    setVacation(data[i].ptobalancevacation);
+                    setHireDate(data[i].hiredate);
+                    // setHolidayname(data[i].holidayname);
+                    // setHolidaydate(data[i].holidaydate);
+
+                }
+            }
+        )
+    }, [])
 
     return ( 
         <div>
@@ -18,7 +53,42 @@ const ManagerHome = () => {
             <br />
             {/* <br /> */}
             <div className="grid-epto-container">
-                <h1 className="emp-header">PTO Balance</h1>
+                <div className="emp-balance-header">
+                    <h1 >PTO Balance</h1>
+                    <span>Refreshes in 0 Days</span>
+                    <table className="request-table">
+                        <tr>
+                            <th> PTO </th>
+                            <th> Available </th>
+                            <th> Used </th>
+                            <th> Requested </th>
+                        </tr>
+                        <tr>
+                        <td>Vacation</td>
+                            <td>{vacation}</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Sick</td>
+                            <td>{sick}</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Personal</td>
+                            <td>{personal}</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{personal+sick+vacation}</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
                 {/* <div className="donut-graphs">
                     <div style={{ width: 200 }}>
                         Personal
@@ -38,24 +108,34 @@ const ManagerHome = () => {
                     </div>
                 </div> */}
                 <div className="emp-header">
-                    <h1>Upcoming Days Off</h1>
+                    <h1>Upcoming 30 Days Off</h1>
                     <div className="days-off">
                         <div className="days-off-contents">Start Date</div>
                         <div className="days-off-contents">End Date</div>
                         <div className="days-off-contents">Type</div>
                     </div>
                     <div className="days-off">
-                        <div className="days-off-contents">2/24/2023</div>
-                        <div className="days-off-contents">2/25/2023</div>
+                        <div className="days-off-contents">4/24/2023</div>
+                        <div className="days-off-contents">4/25/2023</div>
                         <div className="days-off-contents">Sick</div>
                     </div>
-                    {/* <div className="days-off">
-                        <div className="days-off-contents">2/29/2023</div>
-                        <div className="days-off-contents">2/30/2023</div>
+                    <div className="days-off">
+                        <div className="days-off-contents">4/26/2023</div>
+                        <div className="days-off-contents">4/27/2023</div>
+                        <div className="days-off-contents">Personal</div>
+                    </div>
+                    <div className="days-off">
+                        <div className="days-off-contents">4/29/2023</div>
+                        <div className="days-off-contents">4/30/2023</div>
                         <div className="days-off-contents">Vacation</div>
-                    </div> */}
+                    </div>
+                    <div className="days-off">
+                        <div className="days-off-contents">5/01/2023</div>
+                        <div className="days-off-contents">5/05/2023</div>
+                        <div className="days-off-contents">Vacation</div>
+                    </div>
                 </div>
-                    
+
                 <div className="emp-header">
                     <h1>Pending Requests</h1>
                     <br></br>
@@ -75,24 +155,22 @@ const ManagerHome = () => {
                         </tr>
                     </table>
                 </div>
-                {/* <div className="emp-header">
+                <div className="emp-header">
                     <h1 >Holidays</h1>
                     <div className="holiday-table">
                         <br/>
                         <div className="holidays">Christmas</div>
                         <div className="holidays">12/15/2023</div>
                     </div>
-                    <div className="holiday-table">
+                    {/* <div className="holiday-table">
                         <br/>
-                        <div className="holidays">Holdiay Name</div>
-                        <div className="holidays">Holdiay Date</div>
+                        <div className="holidays">{holidayname}</div>
+                        <div className="holidays">{holidaydate}</div>
                     </div> */}
-                    {/* </div> */}
-                    <Holidays holidays={holidays} />
-                
+                </div>
             </div>
         </div>
      );
 }
- 
 export default ManagerHome;
+
