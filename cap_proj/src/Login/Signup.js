@@ -1,7 +1,12 @@
 import '../css/login.css';
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+<<<<<<< Updated upstream
 
+=======
+import LoginHeader from "./LoginHeader";
+// hey remember to make it so that the stuff entered actually goes in the json file.
+>>>>>>> Stashed changes
 function Signup(){
     const [userid2, setUserid2] = useState('');
     const [email, setEmail] = useState('');
@@ -41,6 +46,7 @@ function Signup(){
         navigate("/")
     }
     return(
+<<<<<<< Updated upstream
         <div className="beginning2">
             <div className='signu'>
                 <h2 className='h22'> Enter Info </h2>
@@ -62,6 +68,29 @@ function Signup(){
                     </label>
                     <button className='button2' type='submit' name='signup' value='signup' onClick='/'> Submit </button>
                 </form>
+=======
+        <div>
+            <LoginHeader />
+            <div className="beginning2">
+                <div className='signu'>
+                    <h2 className='h22'> Enter Your Information </h2>
+                    <form action='/signup' method='post' onSubmit={handleSubmit}>
+                        <label className='label2'>
+                            User Id<input className='input2' required value={userid2} onChange={(e) => setUserid2(e.target.value)} />
+                        </label>
+                        <label className='label2'>
+                            First Name<input className='input2' required value={fname} onChange={(e) => setFname(e.target.value)}/>
+                        </label>
+                        <label className='label2'>
+                            Last Name<input className='input2' required value={lname} onChange={(e) => setLname(e.target.value)}/>
+                        </label>
+                        <label className='label2'>
+                            Email<input className='input2' required value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        </label>
+                        <button className='button2' type='submit' name='signup' value='signup' onClick='/'> Submit </button>
+                    </form>
+                </div>
+>>>>>>> Stashed changes
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import '../css/login.css'
+import LoginHeader from "./LoginHeader";
 function Login() {
     const [userid, setUserid] = useState('');
     const [email, setEmail] = useState('');
@@ -29,20 +30,24 @@ function Login() {
         })
     }
     return (
-        <div className="beginning">
-            <div className="login">
-                <h2 className="h2"> Welcome to Aldi </h2>
-                <form onSubmit={handleSubmit}>
-                    <label className="label">
-                        Id:<input type="text" className="input" required value={userid} onChange={(e) => setUserid(e.target.value)}/>
-                    </label>
-                    <label className="label">
-                        Email:<input type="text" className="input" required value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </label>
-                    <br />
-                    <button type="submit" className="button" value="login"> submit </button>
-                    <a href="/signup" className="signup"> signup </a>
-                </form>
+        <div>
+            <LoginHeader />
+            <div className="beginning">
+                <div className="login">
+                    <h2 className="h2"> Welcome to Aldi </h2>
+                    <form onSubmit={handleSubmit}>
+                        <label className="label">
+                            Id<input type="text" className="input" required value={userid} onChange={(e) => setUserid(e.target.value)}/>
+                        </label>
+                        <label className="label">
+                            Email<input type="text" className="input" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                        </label>
+                        <br />
+                        <button type="submit" className="button" value="login"> submit </button>
+                        <br />
+                        <a href="/signup" className="signup"> signup </a>
+                    </form>
+                </div>
             </div>
         </div>
     );

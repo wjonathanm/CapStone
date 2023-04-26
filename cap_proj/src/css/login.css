@@ -1,14 +1,19 @@
 .beginning{
     background-image: url("../imgs/healthy-aldi-finds-coming-to-store-copy.jpg");
+    /*background-color: #00B4DC;*/
     background-size: 1540px;
     padding: 17px;
 }
 .login {
     max-width: 450px;
-    margin: 115px auto;
+    margin-top: 124px;
+    margin-left: 520px;
+    margin-bottom: 149px;
     padding: 46px;
-    background-image: url("../imgs/ASG_SER_MC_RGB.png");
+    background-color: #001E78;
     background-size: 450px;
+    border: 2px;
+    border-radius: 8px;
 }
 .label {
     font-size: 20px;
@@ -28,7 +33,6 @@
     text-align: center;
     width: 85%;
     padding: 6px 10px;
-    margin-left: 20px;
     margin-top: 10px;
     border: 1px solid #ddd;
     box-sizing: border-box;
@@ -39,39 +43,20 @@
     color: #fff;
     border: 0;
     padding: 10px;
+    margin-bottom: 5px;
     margin-left: 20px;
-    margin-bottom: 125px;
     border-radius: 8px;
     cursor: pointer;
 }
 .signup{
     color: orange;
+    margin-left: 20px;
+    padding-bottom: 40px;
 }
 a.signup:link{
     color: #dddddd;
 }
-/*.a{*/
-/*    padding: 0;*/
-/*    margin-left: 20px;*/
-/*    margin-bottom: 80px;*/
-/*    border-radius: 8px;*/
-/*}*/
-/*a:link {*/
-/*    color: #FFB428;*/
-/*    background-color: transparent;*/
-/*    text-decoration: none;*/
-/*}*/
-/*a:hover {*/
-/*    color: white;*/
-/*    background-color: transparent;*/
-/*    text-decoration: underline;*/
-/*}*/
-/*a:visited {*/
-/*    color: purple;*/
-/*    background-color: transparent;*/
-/*    text-decoration: none;*/
-/*}*/
-
+/*Sigup page css*/
 .beginning2{
     background-image: url("../imgs/healthy-aldi-finds-coming-to-store-copy.jpg");
     background-size: 1540px;
@@ -79,10 +64,17 @@ a.signup:link{
 }
 .signu {
     max-width: 450px;
-    margin: 115px auto;
-    padding: 58px;
-    background-image: url("../imgs/ASG_SER_MC_RGB.png");
+    /*margin: 115px auto;*/
+    margin-top: 124px;
+    margin-left: 520px;
+    margin-bottom: 123px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 30px;
+    background-color: #001E78;
     background-size: 450px;
+    border: 2px;
+    border-radius: 8px;
 }
 .label2 {
     font-size: 15px;
@@ -100,9 +92,9 @@ a.signup:link{
     padding-left: 6px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     border: 1px solid #ddd;
     box-sizing: border-box;
     display: block;
@@ -131,4 +123,14 @@ a.signup:link{
     margin-bottom: 57px;
     border-radius: 8px;
     cursor: pointer;
+}
+.log-head{
+    text-align: center;
+    font-size: 40px;
+    color: #FFB428;
+}
+.log-nav{
+    background-color: #001E78;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }

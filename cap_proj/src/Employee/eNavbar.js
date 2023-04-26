@@ -46,7 +46,8 @@ const Navbar = () => {
                     {/* <Link to="/eCalendar">Calendar</Link> */}
                 </div>
                 <div className="nav-button">
-                    <button className="log-out" onClick={Logout}>Log Out</button>
+                    {/*<button className="log-out" onClick={Logout}>Log Out</button>*/}
+                    <a href="/" onClick={Logout} className="log-out">Logout</a>
                 </div>
             </div>
             <div className="navbar-bottom">

@@ -52,9 +52,9 @@ const Navbar = () => {
             </div>
             <div className="navbar-bottom">
                 <ul className="list">
-                    <li className="items">First and Last Name: {Fname} {Lname}</li>
-                    <li className="items">ID: {Eid}</li>
-                    <li className="items">Anniversary Date: {Hiredate.slice(0,10)}</li>
+                    <li className="items">First and Last Name {Fname} {Lname}</li>
+                    <li className="items">ID {Eid}</li>
+                    <li className="items">Anniversary Date {Hiredate.slice(0,10)}</li>
                 </ul>
             </div>
         </nav>
