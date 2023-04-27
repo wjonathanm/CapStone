@@ -35,7 +35,11 @@ const AdministratorSetHoliday = () => {
 
     return (
         <div className="HolidaySet">
-            <Navbar />
+            <div className="Page Holder">
+                <Navbar/>
+                <div className="adminwelcome">
+                    <h3>Holiday Page</h3>
+                </div>
             <br />
             <div className="HolidayContainer">
                 <div className="container1">
@@ -62,6 +66,7 @@ const AdministratorSetHoliday = () => {
                     <Holidays holidays={holidays} />
                 </div>
             </div>
+        </div>
         </div>
     );
 };

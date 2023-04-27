@@ -1,9 +1,26 @@
 import {Link, useNavigate} from "react-router-dom";
 import logo from '../imgs/aldi_logo1.png';
-
-    const Navbar = () => {
-        const navigate = useNavigate();
-
+import {useEffect, useState} from "react";
+const Navbar = () => {
+    const [Eid, setEid] = useState("")
+    const [Fname, setFname] = useState("")
+    const [Lname, setLname] = useState("")
+    const navigate = useNavigate()
+    useEffect(()=>{
+        fetch("/ePTO").then(
+            response => response.json()
+        ).then(
+            data => {
+                JSON.stringify(data)
+                console.log(data)
+                for (let i = 0; i < data.length; i++) {
+                    setEid(data[i].id);
+                    setFname(data[i].firstname);
+                    setLname(data[i].lastname);
+                }
+            }
+        )
+    }, [])
         function Logout() {
             sessionStorage.clear();
             navigate("/");
@@ -19,8 +36,11 @@ import logo from '../imgs/aldi_logo1.png';
                     <Link to="/administratorSetHoliday">SetHoliday</Link>
                     <Link to="/administratorCUser">EmployeeInfo</Link>
                 </div>
+                <br/>
                 <div className="nav-button">
-                    <button className="log-out" onClick={Logout}>Log Out</button>
+                    <p className="items">Hello! {Fname} {Lname}</p>
+                    <p className="items">{Eid}</p>
+                    <a href="/" className="log-out" onClick={Logout}>Logout</a>
                 </div>
             </div>
         </nav>

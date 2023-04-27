@@ -10,12 +10,19 @@ const AdministratorModifyUser = () => {const [employees, set_Employees] = useSta
     }, []);
 
     return(
+        <div className="ModifyUser">
+            <div className="Page Holder">
+                <Navbar/>
+                <div className="adminwelcome">
+                    <h3>Modify User Page</h3>
+                </div>
         <div className="Employeesmod">
-            <Navbar />
             <br />
             <br />
             <h1>Employees</h1>
             <Employees employees={employees} />
+        </div>
+            </div>
         </div>
     )};
 export default AdministratorModifyUser;

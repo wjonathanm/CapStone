@@ -10,12 +10,19 @@ const AdministratorHolidays = () => {const [holidays, setHolidays] = useState([]
             .then(data => setHolidays(data));
     }, []);
 return(
+    <div className="Modify Holidays">
+        <div className="Page Holder">
+            <Navbar/>
+            <div className="adminwelcome">
+                <h3>Modify Holidays Page</h3>
+            </div>
     <div className="HolidaysShow">
-        <Navbar />
         <br />
         <br />
         <h1>Holidays</h1>
         <Holidays holidays={holidays} />
+    </div>
+        </div>
     </div>
 
 )};

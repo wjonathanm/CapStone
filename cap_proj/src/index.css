@@ -4,9 +4,6 @@
   /*color: #333;*/
   box-sizing: border-box;
 }
-.navbar{
-  /* display: flex; */
-}
 .navbar-top {
   background-image: linear-gradient(to right, #00B4DC , #4169B9, #001E78);
   padding: 20px;
@@ -19,27 +16,27 @@
 .nav-button{
   /* text-align: right; */
   /* display: block; */
+  float:right;
+  margin-left: auto;
 }
-.log-out {
-  position: relative;
-  top: 20px;
-  left: 900px;
-  transition-duration: 0.4s;
-  padding: 15px 32px;
-  /*margin-left: 700px;*/
-  /*text-align: center;*/
-  /* display: ;  */
-  /*font-size: 5px;*/
+.navbar a{
+  /* text-align: right; */
+  color: #666666;
+  position: center;
+}
+.navbar p{
+  /* text-align: right; */
+  /* display: block; */
   color: white;
-  background-color: white;
-  /*border-radius: 8px;*/
-  /*border-color: orange;*/
-  background-color: transparent;
+  position: center;
 }
 
-.log-out:hover {
-  /*background-color: orange; */
-  /*color: white;*/
+.log-out{
+  margin-right: -90%;
+  color: #666666;
+}
+.log-out a{
+  font-size: 100px;
 }
 
 .navbar-top a {
@@ -47,14 +44,16 @@
   text-decoration: none;
   padding: 6px;
   font-size: 20px;
+  color: white;
+
 }
 .navbar-top a:hover {
-  color: white;
+  color: #001E78;
 }
 .navbar-bottom{
   margin: 0;
-  background-color: whitesmoke;
-  padding: 15px;
+  background-color: #666666;
+  padding: 5px;
   text-align: center;
   /* display: flex; */
   align-items: center;
@@ -193,14 +192,13 @@ textarea{
 /**********************/
 /*ADMIN STYLES*/
 div.adminwelcome{
-  position: absolute;
-  top:25%;
-  left:50%;
-  margin: 0 -50% 0 0;
-  transform: translate(-50%, -50%);
+  background-color: #666666;
+  font-size: 25px;
+  margin: auto;
 }
 div.adminwelcome h3{
-  padding-left: 30%
+  position: center;
+  padding-left: 45%;
 }
 div.calendarview{
   position: absolute;
@@ -218,9 +216,9 @@ div.sidebar a:hover {
 }
 div.sidebar {
   position: fixed;
-  top: 105px;
+  top: 138px;
   left: 0;
-  height: calc(100vh - 105px); /* set the height to the viewport height minus navbar height */
+  height: calc(100vh - 90px); /* set the height to the viewport height minus navbar height */
   width: 200px;
   background-color: grey;
   padding: 10px;

@@ -11,12 +11,19 @@ const AdministratorModifyRequests = () => {
     }, []);
 
     return(
+        <div className="ModifyRequests">
+            <div className="Page Holder">
+                <Navbar/>
+                <div className="adminwelcome">
+                    <h3>Modify Users Page</h3>
+                </div>
         <div className="RequestsMOD">
-            <Navbar />
             <br />
             <br />
             <h1>Requests</h1>
             <AREQUESTS requests={requests} />
+        </div>
+            </div>
         </div>
     )};
 export default AdministratorModifyRequests;

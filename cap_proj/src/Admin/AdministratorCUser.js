@@ -14,14 +14,20 @@ const AdministratorCUser = () => {
     return (
 
 
-
+        <div className="Cuser">
+            <div className="Page Holder">
+                <Navbar/>
+                <div className="adminwelcome">
+                    <h3>Employees Page</h3>
+                </div>
     <div className="EmployeesShow">
-        <Navbar />
         <br />
         <br />
         <h1>Employees</h1>
         <Employees employees={employees} />
     </div>
+            </div>
+        </div>
     );
 }
 
