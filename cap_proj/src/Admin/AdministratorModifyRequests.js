@@ -15,7 +15,7 @@ const AdministratorModifyRequests = () => {
             <div className="Page Holder">
                 <Navbar/>
                 <div className="adminwelcome">
-                    <h3>Modify Users Page</h3>
+                    <h3>Modify Requests Page</h3>
                 </div>
         <div className="RequestsMOD">
             <br />

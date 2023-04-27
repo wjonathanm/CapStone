@@ -17,9 +17,6 @@ const AdministratorModifyUser = () => {const [employees, set_Employees] = useSta
                     <h3>Modify User Page</h3>
                 </div>
         <div className="Employeesmod">
-            <br />
-            <br />
-            <h1>Employees</h1>
             <Employees employees={employees} />
         </div>
             </div>

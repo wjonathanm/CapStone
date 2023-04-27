@@ -17,11 +17,13 @@ const Employees = ({ employees }) => {
 
     return (
         <div className="Employees6">
+            <div className="searchbar">
             <input type="text" placeholder="Type Any Value to Search" value={searchTerm} onChange={handleSearchChange} />
-
+            </div>
             <table className="employee-table-header">
-                <thead>
                 <tr>
+                <thead>
+
                     <th>ID</th>
                     <th>Role</th>
                     <th>First Name</th>
@@ -29,8 +31,9 @@ const Employees = ({ employees }) => {
                     <th>Email</th>
                     <th>Hiredate</th>
                     <th>Manager id</th>
-                </tr>
+
                 </thead>
+            </tr>
             </table>
 
             <div className="employee-table-body-wrapper">

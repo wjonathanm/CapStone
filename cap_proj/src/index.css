@@ -272,6 +272,7 @@ textarea.reason-box{
 
 .employee-table-header th {
   padding: 5px;
+  margin:auto;
 }
 
 .employee-table-body-wrapper {
@@ -286,9 +287,19 @@ textarea.reason-box{
 
 .employee-table-body td {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
 }
-
+tr:nth-child(even) {
+  background-color: #cccccc;
+}
+div.searchbar{
+  float: right;
+  padding:5px;
+}
+div.searchbar input{
+  width:200px;
+  height:30px;
+}
 
 .employee-table-header {
   width: 100%;
