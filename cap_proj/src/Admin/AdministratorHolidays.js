@@ -1,6 +1,6 @@
 import Navbar from "./administratorNavbar";
 import {useEffect, useState} from "react";
-import Holidays from "./aHolidays";
+import SHolidays from "./aHolidaysSearch";
 
 const AdministratorHolidays = () => {const [holidays, setHolidays] = useState([]);
 
@@ -17,10 +17,7 @@ return(
                 <h3>Modify Holidays Page</h3>
             </div>
     <div className="HolidaysShow">
-        <br />
-        <br />
-        <h1>Holidays</h1>
-        <Holidays holidays={holidays} />
+        < SHolidays holiday={holidays} />
     </div>
         </div>
     </div>

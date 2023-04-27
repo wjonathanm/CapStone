@@ -43,18 +43,19 @@ const AdministratorSetHoliday = () => {
             <br />
             <div className="HolidayContainer">
                 <div className="container1">
+                    <h1>Set Holiday</h1>
                     <div className="holiday-form">
-                        <h1>Set Holiday</h1>
+
                         <form onSubmit={handleSubmit}>
                             <br />
                             <div className="hset-calendar">
-                                <label htmlFor="DateSelect">Select date:</label>
+                                <label htmlFor="DateSelect">Select date  </label>
                                 <input type="date" id="DateSelect" name="holiday_date" required />
                             </div>
                             <br />
                             <label htmlFor="HolidayName">Type Holiday Name </label>
                             <div className="request-text">
-                                <textarea name="holiday_name" id="HolidayName" cols="1" rows="1" required></textarea>
+                                <textarea name="holiday_name" id="HolidayName" cols="20" rows="1" required></textarea>
                             </div>
                             <br />
                             <input type="submit" value="Submit" className="request-button" />

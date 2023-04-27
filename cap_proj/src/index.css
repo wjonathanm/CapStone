@@ -244,23 +244,98 @@ div.sidebar h4 {
   padding-bottom: 100px;
   margin-bottom: 10px;
 }
+/*****/
+/********* Set Holiday Styles**/
 div.HolidayContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
+/*****/
+/********Left side**/
 div.container1 {
   grid-column: 1;
-  margin: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 20px;
 }
+
+/**********/
+/******Right Side**/
+
 
 div.container2 {
   grid-column: 2;
   margin:5%;
 }
-textarea.reason-box{
-  font-size: 6px;
+
+/********/
+/**** Requests Styles**/
+
+.requests-table-header {
+  width: 100%;
+  border-collapse: collapse;
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  z-index: 1;
 }
+
+.requests-table-header th {
+  padding: 5px;
+  margin:auto;
+}
+
+.requests-table-body-wrapper {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.requests-table-body {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.requests-table-body td {
+  padding: 10px;
+  border: 1px solid black;
+}
+/*******/
+/** Holiday styles**/
+.holidays-table-header {
+  width: 100%;
+  border-collapse: collapse;
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  z-index: 1;
+}
+
+.holidays-table-header th {
+  padding: 5px;
+  margin:auto;
+}
+
+.holidays-table-body-wrapper {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.holidays-table-body {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.holidays-table-body td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/************/
+/***** Employee Styles */
+
 .employee-table-header {
   width: 100%;
   border-collapse: collapse;
@@ -292,6 +367,9 @@ textarea.reason-box{
 tr:nth-child(even) {
   background-color: #cccccc;
 }
+
+/****/
+/*** Searchbar*/
 div.searchbar{
   float: right;
   padding:5px;
@@ -300,61 +378,8 @@ div.searchbar input{
   width:200px;
   height:30px;
 }
-
-.employee-table-header {
-  width: 100%;
-  border-collapse: collapse;
-  position: sticky;
-  top: 0;
-  background-color: #f5f5f5;
-  z-index: 1;
+textarea.reason-box{
+  font-size: 6px;
 }
 
-.holidays-table-header th {
-  padding: 5px;
-}
-
-.holidays-table-body-wrapper {
-  height: 250px;
-  overflow-y: scroll;
-}
-
-.holidays-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.holidays-table td {
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-.requests-table-header {
-  width: 100%;
-  border-collapse: collapse;
-  position: sticky;
-  top: 0;
-  background-color: #f5f5f5;
-  z-index: 1;
-}
-
-.requests-table-header th {
-  padding: 5px;
-  margin:auto;
-}
-
-.requests-table-body-wrapper {
-  height: 250px;
-  overflow-y: scroll;
-}
-
-.requests-table-body {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.requests-table-body td {
-  padding: 10px;
-  border: 1px solid black;
-}
 /****************************/
