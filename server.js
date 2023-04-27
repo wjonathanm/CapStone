@@ -56,12 +56,6 @@ app.post('/eRequest', (req, res) =>{
     let reason = req.body.comment;
     let eid = req.session.employeeid;
     let lid = req.session.leaderid;
-    console.log(ptype);
-    console.log(sDate);
-    console.log(eDate);
-    console.log(reason);
-    console.log(eid)
-    console.log(lid)
     if(eid){
         let insertQuery = `INSERT INTO requests(employee_id,leader_id,ptype,reasons,start_date,end_date,status)VALUES('${eid}','${lid}','${ptype}','${reason}','${sDate}','${eDate}', 'pending')`
         client.query( insertQuery, (err, result) => {
