@@ -18,9 +18,6 @@ const AdministratorModifyRequests = () => {
                     <h3>Modify Requests Page</h3>
                 </div>
         <div className="RequestsMOD">
-            <br />
-            <br />
-            <h1>Requests</h1>
             <AREQUESTS requests={requests} />
         </div>
             </div>

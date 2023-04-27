@@ -1,9 +1,28 @@
+import React, {useState} from "react";
+
 const AREQUESTS = ({ requests }) => {
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
+    const filteredRequests = requests.filter((requests) => {
+        const values = Object.values(requests);
+        const lowerCasedValues = values.map((value) =>
+            typeof value === 'string' ? value.toLowerCase() : value.toString()
+        );
+        return lowerCasedValues.some((value) => value.includes(searchTerm.toLowerCase()));
+    });
     return (
         <div className="Requests">
+            <div className="searchbar">
+                <input type="text" placeholder="Type Any Value to Search" value={searchTerm} onChange={handleSearchChange} />
+            </div>
             <table className="requests-table-header">
-                <thead>
                 <tr>
+                <thead>
+
                     <th>Date Requested</th>
                     <th>Request #</th>
                     <th>Employee ID </th>
@@ -12,14 +31,14 @@ const AREQUESTS = ({ requests }) => {
                     <th>Reasons </th>
                     <th>Start Date</th>
                     <th>End Date</th>
-                </tr>
                 </thead>
+                </tr>
             </table>
 
-            <div className="employee-table-body-wrapper">
-                <table className="employee-table-body">
+            <div className="requests-table-body-wrapper">
+                <table className="requests-table-body">
                     <tbody>
-                    {requests.map(requests => (
+                    {filteredRequests.map((requests) => (
                         <tr key={requests.request_id}>
                             <td>{requests.request_date.slice(0, 10)}</td>
                             <td>{requests.request_id}</td>

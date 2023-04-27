@@ -21,9 +21,6 @@ const AdministratorCUser = () => {
                     <h3>Employees Page</h3>
                 </div>
     <div className="EmployeesShow">
-        <br />
-        <br />
-        <h1>Employees</h1>
         <Employees employees={employees} />
     </div>
             </div>
