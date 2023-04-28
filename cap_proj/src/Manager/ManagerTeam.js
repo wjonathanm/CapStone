@@ -26,7 +26,7 @@ function ManagerTeam(){
               <td className="data">{team[i].id}</td>
               <td className="data">{team[i].firstname} {team[i].lastname}</td>
               <td className="data">{team[i].email}</td>
-              <td className="data">{team[i].hiredate}</td>
+              <td className="data">{team[i].hiredate.slice(0,10)}</td>
 
           </tr>
       )

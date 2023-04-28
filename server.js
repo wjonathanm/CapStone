@@ -49,6 +49,18 @@ app.get('/mTeam', (req, res) => {
         }
     })
 })
+app.get('/mEQ', (req, res) => {
+    let eid = req.session.employeeid;
+    let getQuery = `Select * From requests Where leader_id = '${eid}'`
+    client.query(getQuery, (err, resp) => {
+        if (!err){
+            console.log(resp)
+            res.send(resp.rows)
+        }else{
+            console.log(err)
+        }
+    })
+})
 app.post('/eRequest', (req, res) =>{
     let ptype = req.body.ptype;
     let sDate = req.body.sDate;
@@ -56,8 +68,14 @@ app.post('/eRequest', (req, res) =>{
     let reason = req.body.comment;
     let eid = req.session.employeeid;
     let lid = req.session.leaderid;
+    console.log(ptype);
+    console.log(sDate);
+    console.log(eDate);
+    console.log(reason);
+    console.log(eid)
+    console.log(lid)
     if(eid){
-        let insertQuery = `INSERT INTO requests(employee_id,leader_id,ptype,reasons,start_date,end_date,status)VALUES('${eid}','${lid}','${ptype}','${reason}','${sDate}','${eDate}', 'pending')`
+        let insertQuery = `INSERT INTO requests(employee_id,leader_id,ptype,reasons,start_date,end_date)VALUES('${eid}','${lid}','${ptype}','${reason}','${sDate}','${eDate}')`
         client.query( insertQuery, (err, result) => {
             if(!err){
                 console.log("Success")
@@ -220,36 +238,20 @@ app.get('/administratorModifyRequests', (req, res) => {
         }
     });
 });
-app.put('/administratorModifyRequests/:request_id', (req, res) => {
-    const { request_id } = req.params;
-    const { employee_id, leader_id, ptype, reasons, start_date, end_date, request_date } = req.body;
-
-    const updateQuery = `UPDATE requests SET employee_id = $1, leader_id = $2, ptype = $3, reasons = $4, start_date = $5, end_date = $6, request_date = $7 WHERE request_id = $8`;
-    const values = [employee_id, leader_id, ptype, reasons, start_date, end_date, request_date, request_id];
-    client.query(updateQuery, values, (err, resp) => {
+app.get('/employeeRequest', (req, res) => {
+    let eid = req.session.employeeid
+    if (eid){
+    let getQuery = 'Select * FROM requests Where leader_id = ${eid}' //Manager's ID = Employees leaderID
+    client.query(getQuery, (err, resp) => {
         if (!err) {
-            res.sendStatus(204); // return 204 No Content status code to indicate success
-        } else {
-            console.error(err);
-            res.status(500).send('Error updating request');
+            console.log(resp.rows)
+            res.send(resp.rows)
         }
     });
-});
-app.delete('/administratorModifyRequests/:request_id', (req, res) => {
-    const { request_id } = req.params;
+    client.end;
+}
+})
 
-    const deleteQuery = ` DELETE FROM requests WHERE request_id = $1 `;
-    const values = [request_id];
-
-    client.query(deleteQuery, values, (err, resp) => {
-        if (!err) {
-            res.sendStatus(204); // return 204 No Content status code to indicate success
-        } else {
-            console.error(err);
-            res.status(500).send('Error deleting request');
-        }
-    });
-});
 // app.get('/ePTO', (req ,res) => {
 //     let employeeid = req.session.employeeid;
 //     if(employeeid){

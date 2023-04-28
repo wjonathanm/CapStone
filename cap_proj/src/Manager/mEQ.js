@@ -1,10 +1,56 @@
-import Navbar from "./mNav";
+import Navbar from "./mNav"
+import {useEffect, useState} from "react";
+import "../css/tablestyles.css"
 
-const EmployeesReq = () => {
+function MangerEQ(){
+  const [team, setTeams] = useState([]);
+  useEffect(() => {
+    fetch("/mEQ").then(
+        response => response.json()
+    ).then(
+        data => {
+          JSON.stringify(data)
+          console.log(data)
+          setTeams(data)
+        }
+    )
+  },[])
+  console.log(team);
+  const list = [];
+  for (let i in team){
+      list.push(
+          // <div key={i}>
+          //     <div> ID: {team[i].id}</div>
+          // </div>
+          <tr key={i}>
+              <td className="data">{team[i].employee_id}</td>
+              <td className="data">{team[i].ptype}</td>
+              <td className="data">{team[i].start_date.slice(0,10)}</td>
+              <td className="data">{team[i].end_date.slice(0,10)}</td>
+              <td className="data">{team[i].status}</td>
+          </tr>
+      )
+  }
+  return(
+      <div>
+          <Navbar />
+          {/*{list}*/}
+          <table border="2">
+              <thead>
+                  <tr>
+                      <th className="head">ID</th>
+                      <th className="head">PTO Type</th>
+                      <th className="head">Start</th>
+                      <th className="head">End</th>
+                      <th className="head">Status</th>
 
-  return (
-    <Navbar />    
-  );
+                  </tr>
+              </thead>
+              <tbody>
+                    {list}
+              </tbody>
+          </table>
+      </div>
+  )
 }
-     
-export default EmployeesReq;
+export default MangerEQ;
