@@ -5,7 +5,7 @@ import "../css/tablestyles.css"
 function MangerEQ(){
   const [team, setTeams] = useState([]);
   useEffect(() => {
-    fetch("/mTeam").then(
+    fetch("/mEQ").then(
         response => response.json()
     ).then(
         data => {
@@ -23,11 +23,11 @@ function MangerEQ(){
           //     <div> ID: {team[i].id}</div>
           // </div>
           <tr key={i}>
-              <td className="data">{team[i].id}</td>
-              <td className="data">{team[i].firstname} {team[i].lastname}</td>
-              <td className="data">{team[i].email}</td>
-              <td className="data">{team[i].hiredate}</td>
-
+              <td className="data">{team[i].employee_id}</td>
+              <td className="data">{team[i].ptype}</td>
+              <td className="data">{team[i].start_date.slice(0,10)}</td>
+              <td className="data">{team[i].end_date.slice(0,10)}</td>
+              <td className="data">{team[i].status}</td>
           </tr>
       )
   }
@@ -39,7 +39,6 @@ function MangerEQ(){
               <thead>
                   <tr>
                       <th className="head">ID</th>
-                      <th className="head">Name</th>
                       <th className="head">PTO Type</th>
                       <th className="head">Start</th>
                       <th className="head">End</th>

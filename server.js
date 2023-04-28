@@ -49,6 +49,18 @@ app.get('/mTeam', (req, res) => {
         }
     })
 })
+app.get('/mEQ', (req, res) => {
+    let eid = req.session.employeeid;
+    let getQuery = `Select * From requests Where leader_id = '${eid}'`
+    client.query(getQuery, (err, resp) => {
+        if (!err){
+            console.log(resp)
+            res.send(resp.rows)
+        }else{
+            console.log(err)
+        }
+    })
+})
 app.post('/eRequest', (req, res) =>{
     let ptype = req.body.ptype;
     let sDate = req.body.sDate;

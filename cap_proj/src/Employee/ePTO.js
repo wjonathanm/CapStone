@@ -39,16 +39,15 @@ const EmployeePTO = () => {
             Promise.all([resPto.json(), resHoliday.json()])
         ).then(([dataPto, dataholiday]) => {
             JSON.stringify(dataPto)
-            for (let i = 0; i < dataPto; i++){
-                setSick(dataPto[i].ptobalancesick);
+            console.log(dataPto)
+            for (let i = 0; i < dataPto.length; i++){
+                setSick(dataPto[i].ptobalancesick)
                 setPersonal(dataPto[i].ptobalancepersonal);
                 setVacation(dataPto[i].ptobalancevacation);
             }
-            JSON.stringify(dataholiday)
             setHolidays(dataholiday)
         })
     }, [])
-    console.log(holiday)
     const holidayList = [];
     for (let i in holiday){
         holidayList.push(
