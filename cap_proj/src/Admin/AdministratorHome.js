@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
 const AdministratorHome = () => {
+    /***HI**/
     const [eid, setEid] = useState("")
     const [fname, setFname] = useState("")
     const [lname, setLname] = useState("")
