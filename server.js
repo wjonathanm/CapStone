@@ -238,6 +238,35 @@ app.get('/administratorModifyRequests', (req, res) => {
         }
     });
 });
+app.put('/administratorModifyRequests/:request_id', (req, res) => {
+    const { request_id } = req.params;
+    const { employee_id, leader_id, ptype, reasons, start_date, end_date, request_date } = req.body;
+    const updateQuery = `UPDATE requests SET employee_id = $1, leader_id = $2, ptype = $3, reasons = $4, start_date = $5, end_date = $6, request_date = $7 WHERE request_id = $8`;
+    const values = [employee_id, leader_id, ptype, reasons, start_date, end_date, request_date, request_id];
+    client.query(updateQuery, values, (err, resp) => {
+        if (!err) {
+            res.sendStatus(204); // return 204 No Content status code to indicate success
+        } else {
+            console.error(err);
+            res.status(500).send('Error updating request');
+        }
+    });
+});
+app.delete('/administratorModifyRequests/:request_id', (req, res) => {
+    const { request_id } = req.params;
+
+    const deleteQuery = ` DELETE FROM requests WHERE request_id = $1 `;
+    const values = [request_id];
+
+    client.query(deleteQuery, values, (err, resp) => {
+        if (!err) {
+            res.sendStatus(204); // return 204 No Content status code to indicate success
+        } else {
+            console.error(err);
+            res.status(500).send('Error deleting request');
+        }
+    });
+});
 app.get('/employeeRequest', (req, res) => {
     let eid = req.session.employeeid
     if (eid){
