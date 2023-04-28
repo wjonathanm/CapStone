@@ -92,7 +92,7 @@ const EmployeePTO = () => {
             <Navbar />
             <br />
             {/* <br /> */}
-            <h1 className="header-title">PTO Manager Homepage</h1>
+            <h1 className="header-title">PTO Tracker Homepage</h1>
             <br />
             <div className="grid-epto-container">
                 <div className="emp-balance-header">
