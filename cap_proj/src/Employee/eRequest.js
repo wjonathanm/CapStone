@@ -155,20 +155,20 @@ const Request = () => {
                         </tr>
                         <tr>
                         <td>Vacation</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>16</td>
+                            <td>2</td>
                             <td>0</td>
                         </tr>
                         <tr>
                             <td>Sick</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td>7</td>
+                            <td>5</td>
                             <td>0</td>
                         </tr>
                         <tr>
                             <td>Personal</td>
                             <td>0</td>
-                            <td>0</td>
+                            <td>3</td>
                             <td>0</td>
                         </tr>
                     </table>
