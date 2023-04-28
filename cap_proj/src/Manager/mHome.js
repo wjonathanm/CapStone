@@ -1,51 +1,70 @@
-import Holidays from "../Admin/aHolidays";
+// import Holidays from "../Admin/aHolidays";
 import Navbar from "./mNav";
 import { useState } from "react";
 import { useEffect } from "react";
 
 const ManagerHome = () => {
-    const [holidays, setHolidays] = useState ([]);
-    const [eid, setEid] = useState("")
-    const [fname, setFname] = useState("")
-    const [lname, setLname] = useState("")
-    const [email, setEmail] = useState("")
-    const [hiredate, setHireDate] = useState("")
-    const [lid, setLid] = useState("")
-    const [role, setRole] = useState("")
+    const [holidays, setHolidays] = useState ("");
     const [sick, setSick] = useState("")
     const [personal, setPersonal] = useState("")
     const [vacation, setVacation] = useState("")
 
     useEffect(() => {
-        fetch("/administratorSetHoliday")
-            .then(response => response.json())
-            .then(data => setHolidays(data));
-    }, []);
-    useEffect(() => {
-        fetch("/ePTO").then(
-            response => response.json()
-        ).then(
-            data => {
-                JSON.stringify(data)
-                console.log(data)
-                for (let i = 0; i < data.length; i++) {
-                    setEid(data[i].id);
-                    setEmail(data[i].email);
-                    setFname(data[i].firstname);
-                    setLname(data[i].lastname);
-                    setLid(data[i].leaderid);
-                    setRole(data[i].role);
-                    setSick(data[i].ptobalancesick);
-                    setPersonal(data[i].ptobalancepersonal);
-                    setVacation(data[i].ptobalancevacation);
-                    setHireDate(data[i].hiredate);
-                    // setHolidayname(data[i].holidayname);
-                    // setHolidaydate(data[i].holidaydate);
-
-                }
+        Promise.all([
+            fetch("/ePTO"),
+            fetch("/administratorSetHoliday"),
+        ]).then(([resPto, resHoliday]) =>
+            Promise.all([resPto.json(), resHoliday.json()])
+        ).then(([dataPto, dataholiday]) => {
+            JSON.stringify(dataPto)
+            console.log(dataPto)
+            for (let i = 0; i < dataPto.length; i++){
+                setSick(dataPto[i].ptobalancesick)
+                setPersonal(dataPto[i].ptobalancepersonal);
+                setVacation(dataPto[i].ptobalancevacation);
             }
-        )
+            setHolidays(dataholiday)
+        })
     }, [])
+    const holidayList = [];
+    for (let i in holidays){
+        holidayList.push(
+            <tr key={i}>
+                <td>{holidays[i].holiday_name}</td>
+                <td>{holidays[i].holiday_date.slice(0,10)}</td>
+            </tr>
+        )
+    }
+    // useEffect(() => {
+    //     fetch("/administratorSetHoliday")
+    //         .then(response => response.json())
+    //         .then(data => setHolidays(data));
+    // }, []);
+    // useEffect(() => {
+    //     fetch("/ePTO").then(
+    //         response => response.json()
+    //     ).then(
+    //         data => {
+    //             JSON.stringify(data)
+    //             console.log(data)
+    //             for (let i = 0; i < data.length; i++) {
+    //                 setEid(data[i].id);
+    //                 setEmail(data[i].email);
+    //                 setFname(data[i].firstname);
+    //                 setLname(data[i].lastname);
+    //                 setLid(data[i].leaderid);
+    //                 setRole(data[i].role);
+    //                 setSick(data[i].ptobalancesick);
+    //                 setPersonal(data[i].ptobalancepersonal);
+    //                 setVacation(data[i].ptobalancevacation);
+    //                 setHireDate(data[i].hiredate);
+    //                 // setHolidayname(data[i].holidayname);
+    //                 // setHolidaydate(data[i].holidaydate);
+    //
+    //             }
+    //         }
+    //     )
+    // }, [])
 
     return ( 
         <div>
@@ -159,8 +178,17 @@ const ManagerHome = () => {
                     <h1 >Holidays</h1>
                     <div className="holiday-table">
                         <br/>
-                        <div className="holidays">Christmas</div>
-                        <div className="holidays">12/15/2023</div>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Holiday</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {holidayList}
+                            </tbody>
+                        </table>
                     </div>
                     {/* <div className="holiday-table">
                         <br/>
