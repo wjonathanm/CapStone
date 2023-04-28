@@ -1,6 +1,6 @@
 import Navbar from "./administratorNavbar";
 import {useEffect, useState} from "react";
-import AREQUESTS from "./aShowRequest";
+import Arequests from "./aShowRequest";
 
 const AdministratorModifyRequests = () => {
     const [requests, set_Requests] = useState([])
@@ -18,7 +18,7 @@ const AdministratorModifyRequests = () => {
                     <h3>Modify Requests Page</h3>
                 </div>
         <div className="RequestsMOD">
-            <AREQUESTS requests={requests} />
+            <Arequests requests={requests} />
         </div>
             </div>
         </div>

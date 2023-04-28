@@ -17,7 +17,7 @@ return(
                 <h3>Modify Holidays Page</h3>
             </div>
     <div className="HolidaysShow">
-        < SHolidays holiday={holidays} />
+        < SHolidays holidays={holidays} />
     </div>
         </div>
     </div>
