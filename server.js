@@ -75,7 +75,7 @@ app.post('/eRequest', (req, res) =>{
     console.log(eid)
     console.log(lid)
     if(eid){
-        let insertQuery = `INSERT INTO requests(employee_id,leader_id,ptype,reasons,start_date,end_date,status)VALUES('${eid}','${lid}','${ptype}','${reason}','${sDate}','${eDate}',"pending")`
+        let insertQuery = `INSERT INTO requests(employee_id,leader_id,ptype,reasons,start_date,end_date,status)VALUES('${eid}','${lid}','${ptype}','${reason}','${sDate}','${eDate}','pending')`
         client.query( insertQuery, (err, result) => {
             if(!err){
                 console.log("Success")
