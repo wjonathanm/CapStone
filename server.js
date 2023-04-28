@@ -56,8 +56,14 @@ app.post('/eRequest', (req, res) =>{
     let reason = req.body.comment;
     let eid = req.session.employeeid;
     let lid = req.session.leaderid;
+    console.log(ptype);
+    console.log(sDate);
+    console.log(eDate);
+    console.log(reason);
+    console.log(eid)
+    console.log(lid)
     if(eid){
-        let insertQuery = `INSERT INTO requests(employee_id,leader_id,ptype,reasons,start_date,end_date,status)VALUES('${eid}','${lid}','${ptype}','${reason}','${sDate}','${eDate}', 'pending')`
+        let insertQuery = `INSERT INTO requests(employee_id,leader_id,ptype,reasons,start_date,end_date)VALUES('${eid}','${lid}','${ptype}','${reason}','${sDate}','${eDate}')`
         client.query( insertQuery, (err, result) => {
             if(!err){
                 console.log("Success")
@@ -219,6 +225,20 @@ app.get('/administratorModifyRequests', (req, res) => {
         }
     });
 });
+
+app.get('/employeeRequest', (req, res) => {
+    let eid = req.session.employeeid
+    if (eid){
+    let getQuery = 'Select * FROM requests Where leader_id = ${eid}' //Manager's ID = Employees leaderID
+    client.query(getQuery, (err, resp) => {
+        if (!err) {
+            console.log(resp.rows)
+            res.send(resp.rows)
+        }
+    });
+    client.end;
+}
+})
 
 // app.get('/ePTO', (req ,res) => {
 //     let employeeid = req.session.employeeid;
