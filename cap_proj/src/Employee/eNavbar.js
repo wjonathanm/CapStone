@@ -46,16 +46,10 @@ const Navbar = () => {
                     {/* <Link to="/eCalendar">Calendar</Link> */}
                 </div>
                 <div className="nav-button">
-                    {/*<button className="log-out" onClick={Logout}>Log Out</button>*/}
-                    <a href="/" onClick={Logout} className="log-out">Logout</a>
+                    <p className="items">Hello! {Fname} {Lname}</p>
+                    <p className="items">{Eid}</p>
+                    <a href="/" className="log-out" onClick={Logout}>Logout</a>
                 </div>
-            </div>
-            <div className="navbar-bottom">
-                <ul className="list">
-                    <li className="items">{Fname} {Lname}</li>
-                    <li className="items">{Eid}</li>
-                    <li className="items">{Hiredate.slice(0, 10)}</li>
-                </ul>
             </div>
         </nav>
 

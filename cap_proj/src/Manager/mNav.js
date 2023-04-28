@@ -47,15 +47,10 @@ const Navbar = () => {
                     <Link to="/mRequest">Request</Link>
                 </div>
                 <div className="nav-button">
-                    <button className="log-out" onClick={Logout}>Log Out</button>
+                    <p className="items">Hello! {Fname} {Lname}</p>
+                    <p className="items">{Eid}</p>
+                    <a href="/" className="log-out" onClick={Logout}>Logout</a>
                 </div>
-            </div>
-            <div className="navbar-bottom">
-                <ul className="list">
-                    <li className="items">First and Last Name {Fname} {Lname}</li>
-                    <li className="items">ID {Eid}</li>
-                    <li className="items">Anniversary Date {Hiredate.slice(0,10)}</li>
-                </ul>
             </div>
         </nav>
 
