@@ -79,6 +79,12 @@
   justify-content: center;
   /* background-color: whitesmoke; */
 }
+.header-title{
+  text-align: center;
+  font-size: 48px;
+  border-radius: 8px;
+  /* background-color: ; */
+}
 .emp-balance-header{
   text-align: center;
   padding: 20px;

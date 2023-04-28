@@ -22,6 +22,7 @@ const Ehistory = () => {
                 <td>{requests[i].end_date.slice(0, 10)}</td>
                 <td>{requests[i].ptype}</td>
                 <td>{requests[i].request_date.slice(0, 10)}</td>
+                <td>{requests[i].status}</td>
             </tr>
         )
     }
@@ -39,6 +40,7 @@ const Ehistory = () => {
                                 <th>End Date</th>
                                 <th>PTO Type</th>
                                 <th>Request Date</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>

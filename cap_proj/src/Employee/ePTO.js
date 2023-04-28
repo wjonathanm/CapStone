@@ -92,10 +92,12 @@ const EmployeePTO = () => {
             <Navbar />
             <br />
             {/* <br /> */}
+            <h1 className="header-title">PTO Manager Homepage</h1>
+            <br />
             <div className="grid-epto-container">
                 <div className="emp-balance-header">
                     <h1 >PTO Balance</h1>
-                    <span>Refreshes in 0 Days</span>
+                    <span>Refreshes in 213 Days</span>
                     <table className="request-table">
                         <tr>
                             <th> PTO </th>
@@ -106,25 +108,25 @@ const EmployeePTO = () => {
                         <tr>
                         <td>Vacation</td>
                             <td>{vacation}</td>
-                            <td>0</td>
+                            <td>2</td>
                             <td>0</td>
                         </tr>
                         <tr>
                             <td>Sick</td>
                             <td>{sick}</td>
-                            <td>0</td>
+                            <td>5</td>
                             <td>0</td>
                         </tr>
                         <tr>
                             <td>Personal</td>
                             <td>{personal}</td>
-                            <td>0</td>
+                            <td>3</td>
                             <td>0</td>
                         </tr>
                         <tr>
                             <td>Total</td>
                             <td>{personal+sick+vacation}</td>
-                            <td>0</td>
+                            <td>10</td>
                             <td>0</td>
                         </tr>
                     </table>
@@ -149,7 +151,7 @@ const EmployeePTO = () => {
                 </div> */}
                 <div className="emp-header">
                     <h1>Upcoming 30 Days Off</h1>
-                    <div className="days-off">
+                    <div className="days-off" style={{fontWeight:"bold"}}>
                         <div className="days-off-contents">Start Date</div>
                         <div className="days-off-contents">End Date</div>
                         <div className="days-off-contents">Type</div>
@@ -158,21 +160,6 @@ const EmployeePTO = () => {
                         <div className="days-off-contents">4/24/2023</div>
                         <div className="days-off-contents">4/25/2023</div>
                         <div className="days-off-contents">Sick</div>
-                    </div>
-                    <div className="days-off">
-                        <div className="days-off-contents">4/26/2023</div>
-                        <div className="days-off-contents">4/27/2023</div>
-                        <div className="days-off-contents">Personal</div>
-                    </div>
-                    <div className="days-off">
-                        <div className="days-off-contents">4/29/2023</div>
-                        <div className="days-off-contents">4/30/2023</div>
-                        <div className="days-off-contents">Vacation</div>
-                    </div>
-                    <div className="days-off">
-                        <div className="days-off-contents">5/01/2023</div>
-                        <div className="days-off-contents">5/05/2023</div>
-                        <div className="days-off-contents">Vacation</div>
                     </div>
                 </div>
 

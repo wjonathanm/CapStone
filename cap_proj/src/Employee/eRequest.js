@@ -63,6 +63,7 @@ const Request = () => {
             
             <Navbar />
             <br />
+            <h1 className="header-title">Make a Request</h1>
             <br />
             {/* <br /> */}
             {/* <br /> */}
@@ -76,7 +77,7 @@ const Request = () => {
                         </label>
                         <br /> */}
                         <br />
-                        <span>PTO Type:</span>
+                        <span>PTO Type &nbsp;</span>
                         <span className="custom-select">
                             <select onChange={(e) => setPtype(e.target.value)} required>
                                 {options.map((option) => (
@@ -110,14 +111,16 @@ const Request = () => {
                         <br /> */}
                         
                         <div className="request-calendar">
-                            <label for="start">Start date:</label>
+                            <label for="start">Start Date &nbsp;</label>
 
                             <input type="date" id="start" name="pto-start" required
                                 // value="2023-04-10"
-                                min="2023-04-24" max="2023-12-31" onChange={(e)=> setSdate(e.target.value)}>
+                                min="2023-04-28" max="2023-12-31" onChange={(e)=> setSdate(e.target.value)}>
                             </input>
+                            <br></br>
+                            <br />
                             <span>   </span>
-                            <label for="finish">End date:</label>
+                            <label for="finish">End Date &nbsp;</label>
                             <input type="date" id="finish" name="pto-end" required
                                 // value="2023-04-10"
                             // <input type="date" id="start" name="trip-start"
@@ -128,11 +131,11 @@ const Request = () => {
                             // <label for="start">End date:</label>
                             // <input type="date" id="start" name="trip-start"
                             //     value="2023-07-22"
-                                min="2023-04-24" max="2023-12-31" onChange={(e)=> setEdate(e.target.value)}>
+                                min="2023-04-28" max="2023-12-31" onChange={(e)=> setEdate(e.target.value)}>
                             </input>
                         </div>
                         <br />
-                        <label for="emp-reason">Reason: </label>
+                        <label for="emp-reason">Reason </label>
                         <div className="request-text">
                             <textarea name="Reason" id="emp-reason" cols="30" rows="4" maxLength={50} onChange={(e) => setComment(e.target.value)}></textarea>
                             <div >Max Characters: 50</div>
@@ -143,7 +146,6 @@ const Request = () => {
                     </form>
                 </div>
                 <div className="request-form">
-                    <span>Refreshes in 0 Days</span>
                     <table className="request-table">
                         <tr>
                             <th> PTO </th>
