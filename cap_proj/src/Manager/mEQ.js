@@ -29,12 +29,15 @@ function MangerEQ(){
               <td className="data">{team[i].end_date.slice(0,10)}</td>
               <td className="data">{team[i].reasons}</td>
               <td className="data">{team[i].status}</td>
+              <td><button>Approve</button><button>Deny</button></td>
           </tr>
       )
   }
   return(
       <div>
           <Navbar />
+          <h1 className="header-title">Employee's Requests</h1>
+          <br/>
           {/*{list}*/}
           <table border="2">
               <thead>
@@ -45,6 +48,7 @@ function MangerEQ(){
                       <th className="head">End</th>
                       <th className="head">Reason</th>
                       <th className="head">Status</th>
+                      <th className="head">Approve/Deny</th>
 
                   </tr>
               </thead>

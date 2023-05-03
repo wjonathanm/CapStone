@@ -32,8 +32,11 @@ function ManagerTeam(){
       )
   }
   return(
+    
       <div>
           <Navbar />
+          <h1 className="header-title">Team Home Page</h1>
+          <br/>
           {/*{list}*/}
           <table border="2">
               <thead>

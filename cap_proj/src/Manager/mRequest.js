@@ -46,6 +46,8 @@ const ManagerRequest = () => {
     return ( 
     <div>
         <Navbar/>
+        <h1 className="header-title">Request Page</h1>
+          <br/>
         <div className="request-grid">
                 <div className="request-form">
                     <h1>Request Form</h1>

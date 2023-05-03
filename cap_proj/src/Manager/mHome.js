@@ -69,6 +69,8 @@ const ManagerHome = () => {
     return ( 
         <div>
             <Navbar />
+            <h1 className="header-title">PTO Tracker</h1>
+          <br/>
             <br />
             {/* <br /> */}
             <div className="grid-epto-container">

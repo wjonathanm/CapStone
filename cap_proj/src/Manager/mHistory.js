@@ -4,6 +4,8 @@ const mHistory = () => {
     return ( 
         <div>
             <Navbar />
+            <h1 className="header-title">Own Request History</h1>
+          <br/>
             <div>
                 <div className="emp-header">
                     <h1>History</h1>
